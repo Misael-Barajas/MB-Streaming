@@ -1,8 +1,9 @@
+// js/script.js
+
+// --- CONFIGURACIÓN ---
 const MY_PHONE_NUMBER = "523511563006";
 
 // --- DATOS ---
-// - Si es precio único: usa 'price' y 'variants' null.
-// - Si tiene opciones: usa 'variants' (array) y 'price' es el precio "desde" o del primer item.
 const products = [
     // === PERFILES STREAMING ===
     { 
@@ -12,8 +13,8 @@ const products = [
         price: "$95 MXN", 
         description: "Perfil privado en cuenta compartida. Calidad 4K UHD garantizada.", 
         features: ["1 Pantalla", "Calidad 4K", "Sin anuncios", "Garantía 30 días"], 
-        icon: "fa-film", 
-        color: "from-red-600 to-red-900" 
+        image: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
+        color: "from-gray-800 to-black"
     },
     { 
         id: 102, 
@@ -22,8 +23,8 @@ const products = [
         price: "$95 MXN", 
         description: "Disfruta de las mejores series originales de Apple.", 
         features: ["Series exclusivas", "Calidad 4K", "Acceso web/app", "Garantía total"], 
-        icon: "fa-apple-alt", 
-        color: "from-slate-600 to-slate-900" 
+        image: "https://upload.wikimedia.org/wikipedia/commons/2/28/Apple_TV_Plus_Logo.svg",
+        color: "from-zinc-800 to-zinc-950" 
     },
     { 
         id: 103, 
@@ -32,8 +33,8 @@ const products = [
         price: "$90 MXN", 
         description: "Videos sin anuncios y YouTube Music incluido.", 
         features: ["Sin publicidad", "YouTube Music", "Segundo plano", "Descargas"], 
-        icon: "fa-play", 
-        color: "from-red-500 to-orange-600",
+        image: "https://upload.wikimedia.org/wikipedia/commons/d/d7/YouTube_Logo_2017.svg",
+        color: "from-red-600 to-red-900",
         variants: [
             { label: "1 Mes", price: "$90 MXN" },
             { label: "3 Meses", price: "$200 MXN" },
@@ -48,8 +49,8 @@ const products = [
         price: "$70 MXN", 
         description: "Tus historias favoritas de Disney, Pixar, Marvel y Star Wars.", 
         features: ["Películas y Series", "Deportes (según plan)", "Descargas", "Multi-dispositivo"], 
-        icon: "fa-star", 
-        color: "from-blue-600 to-indigo-900",
+        image: "https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg",
+        color: "from-blue-900 to-slate-900",
         variants: [
             { label: "Estándar (con anuncios)", price: "$70 MXN" },
             { label: "Premium (Sin anuncios)", price: "$95 MXN" }
@@ -62,8 +63,8 @@ const products = [
         price: "$80 MXN", 
         description: "El mejor entretenimiento asiático. Doramas y más.", 
         features: ["Viki Pass", "HD", "Sin anuncios", "Estrenos"], 
-        icon: "fa-heart", 
-        color: "from-blue-400 to-blue-600" 
+        image: "https://upload.wikimedia.org/wikipedia/commons/9/92/Rakuten_Viki_Logo_2019.svg",
+        color: "from-cyan-600 to-blue-600" 
     },
     { 
         id: 106, 
@@ -72,8 +73,8 @@ const products = [
         price: "$80 MXN", 
         description: "Series Amazon Originals y envíos gratis (consultar).", 
         features: ["Prime Video", "Series exclusivas", "Calidad UHD", "Soporte"], 
-        icon: "fa-shopping-cart", 
-        color: "from-blue-500 to-cyan-600" 
+        image: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Prime_Video.png",
+        color: "from-blue-800 to-slate-900" 
     },
     { 
         id: 107, 
@@ -82,8 +83,8 @@ const products = [
         price: "$80 MXN", 
         description: "Todo HBO, Warner Bros, DC y Cartoon Network.", 
         features: ["Perfil Privado", "4K UHD", "Series top", "Garantía"], 
-        icon: "fa-tv", 
-        color: "from-purple-600 to-indigo-800" 
+        image: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Max_logo.svg",
+        color: "from-blue-700 to-blue-900" 
     },
     { 
         id: 108, 
@@ -92,8 +93,8 @@ const products = [
         price: "$65 MXN", 
         description: "La colección de anime más grande del mundo.", 
         features: ["Fan Pack", "Sin anuncios", "Simulcast (Estrenos)", "Catálogo completo"], 
-        icon: "fa-dragon", 
-        color: "from-orange-400 to-orange-600" 
+        image: "https://upload.wikimedia.org/wikipedia/commons/0/08/Crunchyroll_Logo.png",
+        color: "from-orange-500 to-orange-700" 
     },
     { 
         id: 109, 
@@ -102,8 +103,8 @@ const products = [
         price: "$65 MXN", 
         description: "Telenovelas, series latinas y Liga MX.", 
         features: ["Deportes en vivo", "Sin anuncios", "Originales VIX", "Garantía"], 
-        icon: "fa-bullhorn", 
-        color: "from-orange-500 to-red-500" 
+        image: "https://upload.wikimedia.org/wikipedia/commons/a/a2/ViX_logo_2022.svg",
+        color: "from-orange-600 to-red-600" 
     },
     { 
         id: 110, 
@@ -112,8 +113,8 @@ const products = [
         price: "$65 MXN", 
         description: "Una montaña de entretenimiento. Series y películas.", 
         features: ["Originales", "Blockbusters", "Contenido infantil", "Garantía"], 
-        icon: "fa-mountain", 
-        color: "from-blue-700 to-blue-900" 
+        image: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Paramount_Plus.svg",
+        color: "from-blue-600 to-blue-900" 
     },
 
     // === MÚSICA ===
@@ -124,8 +125,8 @@ const products = [
         price: "$75 MXN", 
         description: "Millones de canciones y podcasts. Escucha offline.", 
         features: ["Sin anuncios", "Modo Offline", "Saltar canciones", "Audio alta calidad"], 
-        icon: "fa-spotify", 
-        color: "from-green-500 to-green-800",
+        image: "https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg",
+        color: "from-green-600 to-green-900",
         variants: [
             { label: "1 Mes", price: "$75 MXN" },
             { label: "3 Meses", price: "$200 MXN" }
@@ -138,8 +139,8 @@ const products = [
         price: "$60 MXN", 
         description: "Tu música favorita, siempre contigo.", 
         features: ["HiFi", "Sin anuncios", "Offline", "Flow"], 
-        icon: "fa-music", 
-        color: "from-purple-500 to-pink-500" 
+        image: "https://upload.wikimedia.org/wikipedia/commons/d/db/Deezer_logo.svg",
+        color: "from-purple-600 to-purple-900" 
     },
 
     // === HERRAMIENTAS ===
@@ -150,8 +151,8 @@ const products = [
         price: "$280 MXN", 
         description: "Word, Excel, PowerPoint y 1TB de nube.", 
         features: ["Cuenta Original", "1 TB OneDrive", "Licencia 1 Año", "5 Dispositivos"], 
-        icon: "fa-file-word", 
-        color: "from-blue-600 to-blue-800" 
+        image: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Microsoft_Office_logo_%282019%E2%80%93present%29.svg",
+        color: "from-orange-600 to-red-700" 
     },
     { 
         id: 302, 
@@ -160,8 +161,8 @@ const products = [
         price: "$50 MXN", 
         description: "Diseña como un profesional con contenido premium ilimitado.", 
         features: ["Kit de marca", "Quita fondos", "Contenido Premium", "Garantía"], 
-        icon: "fa-palette", 
-        color: "from-cyan-500 to-blue-600",
+        image: "https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg",
+        color: "from-cyan-600 to-blue-600",
         variants: [
             { label: "1 Mes", price: "$50 MXN" },
             { label: "3 Meses", price: "$120 MXN" },
@@ -175,8 +176,8 @@ const products = [
         price: "$120 MXN", 
         description: "Editor de video todo en uno. Funciones Pro desbloqueadas.", 
         features: ["Efectos Pro", "Sin marca de agua", "Nube", "Garantía"], 
-        icon: "fa-video", 
-        color: "from-gray-700 to-black" 
+        image: "https://upload.wikimedia.org/wikipedia/commons/a/a0/CapCut_logo.svg",
+        color: "from-gray-800 to-black" 
     },
     { 
         id: 304, 
@@ -185,11 +186,11 @@ const products = [
         price: "$100 MXN", 
         description: "Inteligencia Artificial avanzada para tus tareas.", 
         features: ["Modelos avanzados", "Respuestas rápidas", "Privacidad", "Soporte"], 
-        icon: "fa-robot", 
-        color: "from-teal-500 to-emerald-700" 
+        image: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
+        color: "from-teal-600 to-emerald-800" 
     },
 
-    // === CUENTAS COMPLETAS (NUEVA CATEGORÍA) ===
+    // === CUENTAS COMPLETAS ===
     { 
         id: 401, 
         name: "Netflix (Completa)", 
@@ -197,7 +198,7 @@ const products = [
         price: "$200 MXN", 
         description: "Cuenta completa privada para ti. Tú gestionas los perfiles.", 
         features: ["5 Perfiles", "Calidad 4K UHD", "Sin geobloqueo", "Privada Total"], 
-        icon: "fa-users", 
+        image: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
         color: "from-red-800 to-black" 
     },
     { 
@@ -207,8 +208,8 @@ const products = [
         price: "$149 MXN", 
         description: "Cuenta completa de Disney+.", 
         features: ["7 Perfiles", "Privada", "Control Parental", "Soporte"], 
-        icon: "fa-shield-alt", 
-        color: "from-blue-800 to-black",
+        image: "https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg",
+        color: "from-blue-900 to-black",
         variants: [
             { label: "Estándar (con anuncios)", price: "$149 MXN" },
             { label: "Premium (+ESPN)", price: "$259 MXN" }
@@ -221,8 +222,8 @@ const products = [
         price: "$85 MXN", 
         description: "Cuenta completa de HBO Max.", 
         features: ["5 Perfiles", "Privada", "4K UHD", "Garantía"], 
-        icon: "fa-crown", 
-        color: "from-purple-800 to-black" 
+        image: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Max_logo.svg",
+        color: "from-purple-900 to-black" 
     },
      { 
         id: 404, 
@@ -231,12 +232,12 @@ const products = [
         price: "$79 MXN", 
         description: "Cuenta completa de Amazon Prime Video.", 
         features: ["6 Perfiles", "Privada", "3 Pantallas", "Garantía"], 
-        icon: "fa-box-open", 
-        color: "from-blue-800 to-cyan-900" 
+        image: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Prime_Video.png",
+        color: "from-blue-900 to-cyan-950" 
     }
 ];
 
-// --- LÓGICA PRINCIPAL ---
+// --- 3. LÓGICA PRINCIPAL ---
 const grid = document.getElementById('productsGrid');
 const searchInput = document.getElementById('searchInput');
 const categoryFilter = document.getElementById('categoryFilter');
@@ -251,7 +252,6 @@ function renderProducts(items) {
     emptyState.classList.add('hidden');
 
     items.forEach((product, index) => {
-        let iconClass = product.icon || 'fa-tag';
         
         const card = document.createElement('div');
         card.className = `glass-card rounded-2xl overflow-hidden cursor-pointer fade-in`;
@@ -260,14 +260,16 @@ function renderProducts(items) {
 
         // Badge de categoría
         let categoryLabel = product.category;
-        if(categoryLabel === 'full') categoryLabel = 'as fa-crown text-yellow-500 Completa';
+        if(categoryLabel === 'full') categoryLabel = '👑 Completa';
         else if(categoryLabel === 'streaming') categoryLabel = 'Streaming';
         else if(categoryLabel === 'music') categoryLabel = 'Música';
         else if(categoryLabel === 'software') categoryLabel = 'Herramienta';
 
         card.innerHTML = `
-            <div class="h-32 bg-gradient-to-br ${product.color} flex items-center justify-center relative group">
-                <i class="fas ${iconClass} text-5xl text-white opacity-80 group-hover:scale-110 transition-transform duration-300"></i>
+            <div class="h-32 bg-gradient-to-br ${product.color} flex items-center justify-center relative group overflow-hidden">
+                <img src="${product.image}" alt="${product.name}" 
+                     class="h-16 w-auto max-w-[70%] object-contain drop-shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-2">
+                
                 <div class="absolute bottom-2 right-2 bg-black/40 px-2 py-1 rounded text-xs font-bold text-white uppercase backdrop-blur-sm">
                     ${categoryLabel}
                 </div>
@@ -299,7 +301,6 @@ function filterProducts() {
         if (category === 'full') {
             matchesCategory = product.category === 'full';
         } else if (category !== 'all') {
-            // Si elige "Streaming" en el select, que no muestre las cuentas completas, solo perfiles
             if(category === 'streaming' && product.category === 'full') matchesCategory = false;
             else matchesCategory = product.category === category;
         }
@@ -319,7 +320,6 @@ function filterProductsByMenu(menuType) {
         categoryFilter.value = 'all';
     } else {
         filtered = products.filter(p => p.category === menuType);
-        // Truco visual para el select
         if(menuType === 'streaming' || menuType === 'music' || menuType === 'software') {
             categoryFilter.value = menuType;
         } else {
@@ -333,7 +333,7 @@ function filterProductsByMenu(menuType) {
 searchInput.addEventListener('input', filterProducts);
 categoryFilter.addEventListener('change', filterProducts);
 
-// --- MODAL CON LÓGICA DE VARIANTES ---
+// --- MODAL ---
 const modal = document.getElementById('productModal');
 const mTitle = document.getElementById('modalTitle');
 const mDesc = document.getElementById('modalDescription');
@@ -342,12 +342,10 @@ const mFeatures = document.getElementById('modalFeatures');
 const mHeader = document.getElementById('modalHeaderColor');
 const mBtn = document.getElementById('modalBuyBtn');
 const mCat = document.getElementById('modalCategory');
-
-// Nuevos elementos para opciones
 const mOptionsContainer = document.getElementById('modalOptionsContainer');
 const mOptionsSelect = document.getElementById('modalOptionsSelect');
+const mIcon = document.getElementById('modalIcon');
 
-// Variable para guardar el producto actual seleccionado
 let currentProduct = null;
 
 function openModal(product) {
@@ -356,7 +354,6 @@ function openModal(product) {
     mTitle.innerText = product.name;
     mDesc.innerText = product.description;
     
-    // Categoría bonita
     let catName = 'Producto';
     if(product.category === 'streaming') catName = 'Streaming';
     else if(product.category === 'music') catName = 'Música';
@@ -366,47 +363,44 @@ function openModal(product) {
     else if(product.category === 'special') catName = 'Especial';
     
     mCat.innerText = catName;
-    mHeader.className = `h-32 w-full bg-gradient-to-r ${product.color} flex items-center justify-center`;
+    mHeader.className = `h-32 w-full bg-gradient-to-r ${product.color} flex items-center justify-center p-4`;
+    
+    // Limpiamos el contenido previo del header y ponemos la imagen
+    mHeader.innerHTML = `
+        <img src="${product.image}" class="h-full w-auto object-contain drop-shadow-2xl" alt="${product.name}">
+    `;
+
     mFeatures.innerHTML = product.features.map(feat => `<li class="flex items-center gap-2"><i class="fas fa-check text-cyan-500 text-xs"></i> ${feat}</li>`).join('');
 
-    // Lógica de Variantes (Duración/Planes)
-    mOptionsSelect.innerHTML = ''; // Limpiar select anterior
+    // Lógica de Variantes
+    mOptionsSelect.innerHTML = ''; 
     
     if (product.variants && product.variants.length > 0) {
-        // SI TIENE VARIANTES
         mOptionsContainer.classList.remove('hidden');
-        
-        // Llenar el select
         product.variants.forEach((variant, idx) => {
             const option = document.createElement('option');
-            option.value = idx; // Usamos el índice para buscarlo luego
+            option.value = idx;
             option.text = `${variant.label}`;
             mOptionsSelect.appendChild(option);
         });
 
-        // Precio inicial (del primer item)
         mPrice.innerText = product.variants[0].price;
 
-        // Escuchar cambios en el select para actualizar precio
         mOptionsSelect.onchange = (e) => {
             const index = e.target.value;
             const selectedVariant = product.variants[index];
-            // Efecto de animación simple en el precio
             mPrice.style.opacity = '0';
             setTimeout(() => {
                 mPrice.innerText = selectedVariant.price;
                 mPrice.style.opacity = '1';
             }, 150);
         };
-
     } else {
-        // NO TIENE VARIANTES (Producto simple)
         mOptionsContainer.classList.add('hidden');
         mPrice.innerText = product.price;
         mOptionsSelect.onchange = null;
     }
     
-    // Configurar botón de compra
     mBtn.onclick = () => handleBuyClick();
 
     modal.classList.remove('hidden');
@@ -417,9 +411,8 @@ function handleBuyClick() {
     if (!currentProduct) return;
 
     let finalPrice = currentProduct.price;
-    let detailText = "";
+    let detailText = ""; 
 
-    // Verificar si hay una variante seleccionada
     if (currentProduct.variants && currentProduct.variants.length > 0 && !mOptionsContainer.classList.contains('hidden')) {
         const index = mOptionsSelect.value;
         const variant = currentProduct.variants[index];
@@ -427,9 +420,7 @@ function handleBuyClick() {
         detailText = ` (${variant.label})`;
     }
 
-    // Mensaje para WhatsApp
     const msg = `Hola, Misael, me interesa: *${currentProduct.name}${detailText}* - ${finalPrice}. ¿Me ayudas con la info de pago?`;
-    
     window.open(`https://wa.me/${MY_PHONE_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
@@ -438,8 +429,7 @@ function closeModal() {
     document.body.style.overflow = 'auto';
 }
 
-// --- CHAT Y DRAWER (Copia las funciones toggleChat, sendCustomMessage, toggleDrawer y Listeners aquí del código anterior) ---
-
+// --- UTILS ---
 function toggleChat() {
     const widget = document.getElementById('chatWidget');
     const isHidden = widget.classList.contains('chat-hidden');
