@@ -5,12 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MB Streaming | Cuentas Premium</title>
     
-    <!-- === LIBRERÍAS EXTERNAS === -->
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome para Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script>
@@ -33,98 +29,23 @@
         }
     </script>
 
-    <!-- === INICIO ESTILOS CSS (Para tu archivo style.css) === -->
-    <style>
-        body {
-            background-color: #0f172a;
-            color: white;
-            background-image: radial-gradient(circle at 10% 20%, rgba(147, 51, 234, 0.1) 0%, transparent 20%),
-                              radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 20%);
-        }
-        
-        /* Scrollbar personalizada */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f172a; 
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #334155; 
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #475569; 
-        }
-
-        .glass-card {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(6, 182, 212, 0.5);
-            box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.3);
-        }
-
-        .btn-gradient {
-            background: linear-gradient(135deg, #06b6d4 0%, #9333ea 100%);
-            transition: opacity 0.3s ease;
-        }
-        .btn-gradient:hover {
-            opacity: 0.9;
-        }
-
-        /* Animación de entrada */
-        .fade-in {
-            animation: fadeIn 0.5s ease-in;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Animación del Chat Widget */
-        #chatWidget {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .chat-hidden {
-            opacity: 0;
-            transform: scale(0.9) translateY(20px);
-            pointer-events: none;
-        }
-        .chat-visible {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-            pointer-events: all;
-        }
-    </style>
-    <!-- === FIN ESTILOS CSS === -->
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="min-h-screen flex flex-col relative">
 
-    <!-- Navbar (Limpia) -->
     <nav class="sticky top-0 z-40 glass-card border-b-0 border-b-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="flex items-center gap-3 mx-auto md:mx-0">
-                    <!-- Logo del usuario -->
-                    <img src="IMG_3640.jpg" alt="MB Streaming Logo" class="h-12 w-12 rounded-full object-cover border-2 border-cyan-500 shadow-lg shadow-purple-500/20">
+                    <img src="img/IMG_3640.jpg" alt="MB Streaming Logo" class="h-12 w-12 rounded-full object-cover border-2 border-cyan-500 shadow-lg shadow-purple-500/20">
                     <span class="font-bold text-2xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
                         MB Streaming
                     </span>
                 </div>
-                <!-- Menú eliminado como pediste -->
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <div class="relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-6">
@@ -137,7 +58,6 @@
                 Cuentas premium legales, con garantía total y soporte personalizado.
             </p>
             
-            <!-- Buscador y Filtros -->
             <div class="flex flex-col md:flex-row justify-center gap-4 max-w-3xl mx-auto">
                 <div class="relative w-full md:w-2/3">
                     <i class="fas fa-search absolute left-4 top-3.5 text-gray-500"></i>
@@ -154,11 +74,9 @@
         </div>
     </div>
 
-    <!-- Grid de Productos -->
     <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full z-10 relative">
         <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Los productos se insertarán aquí con JS -->
-        </div>
+            </div>
 
         <div id="emptyState" class="hidden text-center py-20">
             <i class="fas fa-ghost text-6xl text-slate-700 mb-4"></i>
@@ -166,12 +84,11 @@
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="border-t border-white/5 bg-slate-900/50 mt-12 mb-20 md:mb-0">
         <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-4">
                 <div class="flex items-center gap-2">
-                    <img src="IMG_3640.jpg" alt="Logo Footer" class="h-8 w-8 rounded-full">
+                    <img src="img/IMG_3640.jpg" alt="Logo Footer" class="h-8 w-8 rounded-full">
                     <span class="text-gray-400 text-sm">© 2024 MB Streaming</span>
                 </div>
                 <div class="flex gap-6">
@@ -182,12 +99,8 @@
         </div>
     </footer>
 
-    <!-- === CHAT WIDGET & FAB === -->
-    
-    <!-- Widget del Chat (Oculto por defecto) -->
     <div id="chatWidget" class="fixed bottom-24 right-4 md:right-8 w-[90%] md:w-80 z-[60] chat-hidden origin-bottom-right">
         <div class="glass-card rounded-2xl overflow-hidden border border-slate-600 shadow-2xl shadow-purple-900/40">
-            <!-- Header Chat -->
             <div class="bg-gradient-to-r from-cyan-600 to-purple-600 p-4 flex items-center gap-3">
                 <div class="bg-white/20 p-2 rounded-full relative">
                     <i class="fas fa-headset text-white"></i>
@@ -202,7 +115,6 @@
                 </button>
             </div>
             
-            <!-- Body Chat -->
             <div class="p-4 bg-slate-900/95 backdrop-blur-xl">
                 <div class="bg-slate-800/50 rounded-lg p-3 mb-4 border border-white/5">
                     <p class="text-xs text-gray-300">👋 ¡Hola! ¿En qué podemos ayudarte hoy? Escribe tu consulta abajo.</p>
@@ -220,16 +132,12 @@
         </div>
     </div>
 
-    <!-- Botón Flotante (FAB) -->
     <button onclick="toggleChat()" 
         class="fixed bottom-6 right-4 md:right-8 z-[60] h-14 w-14 rounded-full btn-gradient shadow-lg shadow-purple-500/40 flex items-center justify-center text-white text-2xl hover:scale-110 transition-transform duration-300 group ring-2 ring-white/20">
-        <!-- Icono normal -->
         <i class="fab fa-whatsapp group-hover:hidden transition-all"></i>
-        <!-- Icono al pasar mouse o click -->
         <i class="fas fa-comment-dots hidden group-hover:block transition-all"></i>
     </button>
 
-    <!-- Modal de Producto (Se mantiene igual, funcional) -->
     <div id="productModal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <div class="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
         <div class="fixed inset-0 z-10 overflow-y-auto">
@@ -268,164 +176,6 @@
         </div>
     </div>
 
-    <!-- === INICIO JAVASCRIPT (Para tu archivo script.js) === -->
-    <script>
-        // --- 1. CONFIGURACIÓN ---
-        const MY_PHONE_NUMBER = "5215512345678"; 
-
-        // --- 2. DATOS ---
-        const products = [
-            { id: 1, name: "Netflix Premium 4K", category: "streaming", price: "$120 MXN", description: "Cuenta completa privada o perfil compartido. Disfruta de la mejor calidad Ultra HD 4K.", features: ["1 Pantalla (Perfil)", "Calidad 4K UHD", "Sin anuncios", "Garantía total"], icon: "fa-film", color: "from-red-600 to-red-900" },
-            { id: 2, name: "Disney+ & Star+", category: "streaming", price: "$80 MXN", description: "El combo perfecto. Películas de Disney, Marvel, Star Wars y deportes en vivo.", features: ["1 Pantalla", "Contenido 4K", "Deportes en vivo", "Soporte inmediato"], icon: "fa-star", color: "from-blue-600 to-indigo-900" },
-            { id: 3, name: "Spotify Individual", category: "music", price: "$60 MXN", description: "Música sin interrupciones. Descarga tus canciones favoritas.", features: ["Cuenta Individual", "Sin publicidad", "Modo Offline", "Renovable"], icon: "fa-music", color: "from-green-500 to-green-800" },
-            { id: 4, name: "HBO Max (Max)", category: "streaming", price: "$70 MXN", description: "Las mejores series de HBO. Game of Thrones, The Last of Us y mucho más.", features: ["Perfil Privado", "Calidad HD/4K", "Garantía del mes", "Multi-idioma"], icon: "fa-tv", color: "from-purple-600 to-indigo-800" },
-            { id: 5, name: "YouTube Premium", category: "streaming", price: "$50 MXN", description: "Videos sin anuncios, reproducción en segundo plano y YouTube Music.", features: ["Sin anuncios", "YouTube Music", "Segundo plano", "Activación a tu correo"], icon: "fa-play", color: "from-red-500 to-orange-600" },
-            { id: 6, name: "Canva Pro", category: "software", price: "$40 MXN", description: "Herramienta de diseño gráfico para no diseñadores. Acceso a millones de fotos.", features: ["Acceso a tu correo", "Plantillas Pro", "Quita fondos", "Duración 1 mes"], icon: "fa-palette", color: "from-cyan-500 to-blue-600" }
-        ];
-
-        // --- 3. LÓGICA PRINCIPAL ---
-        const grid = document.getElementById('productsGrid');
-        const searchInput = document.getElementById('searchInput');
-        const categoryFilter = document.getElementById('categoryFilter');
-        const emptyState = document.getElementById('emptyState');
-
-        function renderProducts(items) {
-            grid.innerHTML = '';
-            if (items.length === 0) {
-                emptyState.classList.remove('hidden');
-                return;
-            }
-            emptyState.classList.add('hidden');
-
-            items.forEach((product, index) => {
-                const card = document.createElement('div');
-                card.className = `glass-card rounded-2xl overflow-hidden cursor-pointer fade-in`;
-                card.style.animationDelay = `${index * 0.1}s`;
-                card.onclick = () => openModal(product);
-
-                card.innerHTML = `
-                    <div class="h-32 bg-gradient-to-br ${product.color} flex items-center justify-center relative group">
-                        <i class="fas ${product.icon} text-5xl text-white opacity-80 group-hover:scale-110 transition-transform duration-300"></i>
-                        <div class="absolute bottom-2 right-2 bg-black/40 px-2 py-1 rounded text-xs font-bold text-white uppercase backdrop-blur-sm">
-                            ${product.category}
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-bold text-lg text-white mb-1 truncate">${product.name}</h3>
-                        <p class="text-gray-400 text-sm line-clamp-2 mb-4 h-10">${product.description}</p>
-                        <div class="flex items-center justify-between border-t border-white/10 pt-4">
-                            <span class="text-cyan-400 font-bold text-xl">${product.price}</span>
-                            <span class="text-xs text-gray-500 font-medium bg-slate-800 px-2 py-1 rounded hover:bg-slate-700 transition-colors">Ver detalles &rarr;</span>
-                        </div>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        function filterProducts() {
-            const searchTerm = searchInput.value.toLowerCase();
-            const category = categoryFilter.value;
-            const filtered = products.filter(product => {
-                const matchesSearch = product.name.toLowerCase().includes(searchTerm) || product.description.toLowerCase().includes(searchTerm);
-                const matchesCategory = category === 'all' || product.category === category;
-                return matchesSearch && matchesCategory;
-            });
-            renderProducts(filtered);
-        }
-
-        searchInput.addEventListener('input', filterProducts);
-        categoryFilter.addEventListener('change', filterProducts);
-
-        // --- 4. MODAL ---
-        const modal = document.getElementById('productModal');
-        // Elementos del modal
-        const mTitle = document.getElementById('modalTitle');
-        const mDesc = document.getElementById('modalDescription');
-        const mPrice = document.getElementById('modalPrice');
-        const mFeatures = document.getElementById('modalFeatures');
-        const mHeader = document.getElementById('modalHeaderColor');
-        const mBtn = document.getElementById('modalBuyBtn');
-        const mCat = document.getElementById('modalCategory');
-
-        function openModal(product) {
-            mTitle.innerText = product.name;
-            mDesc.innerText = product.description;
-            mPrice.innerText = product.price;
-            mCat.innerText = product.category === 'streaming' ? 'Streaming' : product.category === 'music' ? 'Música' : 'Software';
-            mHeader.className = `h-32 w-full bg-gradient-to-r ${product.color} flex items-center justify-center`;
-            mFeatures.innerHTML = product.features.map(feat => `<li class="flex items-center gap-2"><i class="fas fa-check text-cyan-500 text-xs"></i> ${feat}</li>`).join('');
-            
-            mBtn.onclick = () => {
-                const msg = `Hola MB Streaming 👋, me interesa: *${product.name}* (${product.price}). ¿Info de pago?`;
-                window.open(`https://wa.me/${MY_PHONE_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
-            };
-
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        // --- 5. LOGICA DEL CHAT FLOTANTE (NUEVO) ---
-        function toggleChat() {
-            const widget = document.getElementById('chatWidget');
-            const isHidden = widget.classList.contains('chat-hidden');
-            const input = document.getElementById('chatInput');
-
-            if (isHidden) {
-                // Mostrar
-                widget.classList.remove('hidden');
-                // Timeout pequeño para permitir que el navegador renderice antes de la transición
-                setTimeout(() => {
-                    widget.classList.remove('chat-hidden');
-                    widget.classList.add('chat-visible');
-                    input.focus(); // Enfocar el input automáticamente
-                }, 10);
-            } else {
-                // Ocultar
-                widget.classList.remove('chat-visible');
-                widget.classList.add('chat-hidden');
-                setTimeout(() => {
-                    widget.classList.add('hidden');
-                }, 300); // Esperar a que termine la animación
-            }
-        }
-
-        function sendCustomMessage() {
-            const input = document.getElementById('chatInput');
-            const text = input.value.trim();
-            if (!text) {
-                input.classList.add('border-red-500');
-                setTimeout(() => input.classList.remove('border-red-500'), 1000);
-                return;
-            }
-
-            const url = `https://wa.me/${MY_PHONE_NUMBER}?text=${encodeURIComponent(text)}`;
-            window.open(url, '_blank');
-            
-            // Opcional: Limpiar input después de enviar
-            input.value = '';
-            toggleChat(); // Cerrar el chat
-        }
-
-        // Event Listeners Globales
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeModal();
-                // También cerrar chat si está abierto
-                const widget = document.getElementById('chatWidget');
-                if (widget.classList.contains('chat-visible')) toggleChat();
-            }
-        });
-
-        // Inicializar
-        renderProducts(products);
-
-    </script>
-    <!-- === FIN JAVASCRIPT === -->
+    <script src="js/script.js"></script>
 </body>
 </html>
