@@ -67,3 +67,19 @@ body {
     transform: scale(1) translateY(0);
     pointer-events: all;
 }
+
+/* Estado visible del Drawer (entra a la pantalla) */
+.drawer-open {
+    transform: translateX(0) !important;
+}
+
+/* Estado visible del Overlay (fondo oscuro) */
+.overlay-visible {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* Clase de utilidad para mostrar overlay (block vs hidden) */
+.block-force {
+    display: block !important;
+}
