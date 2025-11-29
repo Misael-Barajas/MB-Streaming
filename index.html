@@ -147,20 +147,31 @@
                     <button onclick="closeModal()" class="absolute right-4 top-4 text-gray-400 hover:text-white z-10 bg-black/20 rounded-full w-8 h-8 flex items-center justify-center backdrop-blur-md">
                         <i class="fas fa-times"></i>
                     </button>
+                    
                     <div id="modalHeaderColor" class="h-32 w-full bg-gradient-to-r from-cyan-600 to-purple-600 flex items-center justify-center">
                         <i id="modalIcon" class="fas fa-play-circle text-6xl text-white/50"></i>
                     </div>
+                    
                     <div class="px-6 py-6">
                         <div class="flex items-center justify-between mb-2">
                             <h3 class="text-2xl font-bold text-white" id="modalTitle">Título</h3>
                             <span class="bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full text-sm font-semibold border border-cyan-500/30" id="modalCategory">Cat</span>
                         </div>
+                        
                         <div class="mt-4 space-y-4">
                             <p class="text-gray-300 text-sm leading-relaxed" id="modalDescription">Desc</p>
+                            
+                            <div id="modalOptionsContainer" class="hidden">
+                                <label class="text-xs text-gray-400 uppercase font-bold tracking-wider mb-2 block">Elige tu plan:</label>
+                                <select id="modalOptionsSelect" class="w-full bg-slate-900 border border-slate-600 rounded-lg p-3 text-white text-sm focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none">
+                                    </select>
+                            </div>
+
                             <div class="bg-slate-900/50 rounded-lg p-4 border border-white/5">
                                 <h4 class="text-sm font-semibold text-gray-400 mb-2 uppercase tracking-wider">Detalles</h4>
                                 <ul class="space-y-2 text-sm text-gray-300" id="modalFeatures"></ul>
                             </div>
+                            
                             <div class="flex items-end justify-between mt-6 pt-4 border-t border-white/10">
                                 <div>
                                     <p class="text-xs text-gray-400">Precio</p>
@@ -199,7 +210,17 @@
                 </div>
                 <div class="flex flex-col">
                     <span class="font-semibold">Catálogo Completo</span>
-                    <span class="text-xs text-gray-500">Todo nuestro inventario</span>
+                    <span class="text-xs text-gray-500">Todo el inventario</span>
+                </div>
+            </a>
+
+            <a href="#" onclick="filterProductsByMenu('full')" class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-300 hover:bg-white/5 hover:text-yellow-400 transition-all group">
+                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-yellow-500/20 transition-colors">
+                    <i class="fas fa-crown text-yellow-500"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-semibold text-yellow-100">Cuentas Completas</span>
+                    <span class="text-xs text-gray-500">Con todos los perfiles</span>
                 </div>
             </a>
 
@@ -231,12 +252,10 @@
             </div>
 
         </div>
-
         <div class="p-6 border-t border-white/10 bg-slate-950/50">
             <button onclick="sendCustomMessage()" class="w-full py-3 rounded-xl border border-white/10 text-sm font-semibold text-gray-300 hover:bg-white/5 hover:text-white transition-all flex items-center justify-center gap-2">
                 <i class="far fa-envelope"></i> Contactar Soporte
             </button>
-            <p class="text-center text-xs text-gray-600 mt-4">v1.2.0 • MB Streaming</p>
         </div>
     </aside>
 
