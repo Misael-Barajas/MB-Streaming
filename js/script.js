@@ -236,7 +236,7 @@ const products = [
     }
 ];
 
-// --- 3. LÓGICA PRINCIPAL ---
+// --- LÓGICA PRINCIPAL ---
 const grid = document.getElementById('productsGrid');
 const searchInput = document.getElementById('searchInput');
 const categoryFilter = document.getElementById('categoryFilter');
@@ -260,7 +260,7 @@ function renderProducts(items) {
 
         // Badge de categoría
         let categoryLabel = product.category;
-        if(categoryLabel === 'full') categoryLabel = '👑 Completa';
+        if(categoryLabel === 'full') categoryLabel = 'as fa-crown text-yellow-500 Completa';
         else if(categoryLabel === 'streaming') categoryLabel = 'Streaming';
         else if(categoryLabel === 'music') categoryLabel = 'Música';
         else if(categoryLabel === 'software') categoryLabel = 'Herramienta';
@@ -333,7 +333,7 @@ function filterProductsByMenu(menuType) {
 searchInput.addEventListener('input', filterProducts);
 categoryFilter.addEventListener('change', filterProducts);
 
-// --- 4. MODAL CON LÓGICA DE VARIANTES ---
+// --- MODAL CON LÓGICA DE VARIANTES ---
 const modal = document.getElementById('productModal');
 const mTitle = document.getElementById('modalTitle');
 const mDesc = document.getElementById('modalDescription');
@@ -351,7 +351,7 @@ const mOptionsSelect = document.getElementById('modalOptionsSelect');
 let currentProduct = null;
 
 function openModal(product) {
-    currentProduct = product; // Guardamos referencia
+    currentProduct = product;
     
     mTitle.innerText = product.name;
     mDesc.innerText = product.description;
@@ -403,7 +403,7 @@ function openModal(product) {
         // NO TIENE VARIANTES (Producto simple)
         mOptionsContainer.classList.add('hidden');
         mPrice.innerText = product.price;
-        mOptionsSelect.onchange = null; // Quitar listener
+        mOptionsSelect.onchange = null;
     }
     
     // Configurar botón de compra
@@ -417,7 +417,7 @@ function handleBuyClick() {
     if (!currentProduct) return;
 
     let finalPrice = currentProduct.price;
-    let detailText = ""; // Ej: "(3 Meses)"
+    let detailText = "";
 
     // Verificar si hay una variante seleccionada
     if (currentProduct.variants && currentProduct.variants.length > 0 && !mOptionsContainer.classList.contains('hidden')) {
@@ -428,8 +428,7 @@ function handleBuyClick() {
     }
 
     // Mensaje para WhatsApp
-    // "Hola MB Streaming, me interesa: YouTube Premium (3 Meses) - $200 MXN. ¿Info de pago?"
-    const msg = `Hola MB Streaming 👋, me interesa: *${currentProduct.name}${detailText}* - ${finalPrice}. ¿Me ayudas con la info de pago?`;
+    const msg = `Hola, Misael, me interesa: *${currentProduct.name}${detailText}* - ${finalPrice}. ¿Me ayudas con la info de pago?`;
     
     window.open(`https://wa.me/${MY_PHONE_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
 }
@@ -439,8 +438,7 @@ function closeModal() {
     document.body.style.overflow = 'auto';
 }
 
-// ... (Resto de funciones: toggleChat, toggleDrawer, etc. siguen IGUAL) ...
-// --- 5. CHAT Y DRAWER (Copia las funciones toggleChat, sendCustomMessage, toggleDrawer y Listeners aquí del código anterior) ---
+// --- CHAT Y DRAWER (Copia las funciones toggleChat, sendCustomMessage, toggleDrawer y Listeners aquí del código anterior) ---
 
 function toggleChat() {
     const widget = document.getElementById('chatWidget');
