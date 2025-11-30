@@ -266,7 +266,7 @@ window.openModal = function(productId) {
     currentProduct = product;
     mTitle.innerText = product.name;
     mDesc.innerText = product.description;
-    mCat.innerText = product.category === 'special' ? "Oferta Año Nuevo" : (product.category === 'full' ? "Cuenta Completa" : "Servicio");
+    mCat.innerText = product.category === 'special' ? "Oferta Año Nuevo" : (product.category === 'full' ? "Completa" : "Servicio");
     mHeader.className = `h-32 w-full bg-gradient-to-r ${product.color} flex items-center justify-center p-4`;
     const logoClass = product.logoClass || "h-16 w-auto max-w-[70%]";
     mHeader.innerHTML = `<img src="${product.image}" class="${logoClass} object-contain drop-shadow-2xl brightness-0 invert">`;
