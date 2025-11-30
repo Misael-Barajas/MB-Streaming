@@ -26,14 +26,25 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
 }
+.glass-card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 .btn-gradient {
     background: linear-gradient(135deg, #06b6d4 0%, #9333ea 100%);
     transition: opacity 0.3s ease;
-    
-    &:hover {
-        opacity: 0.6;
-    }
+}
+.btn-gradient:hover {
+    opacity: 0.9;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #06b6d4 0%, #9333ea 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
 }
 
 /* Animación de entrada */
