@@ -1,5 +1,5 @@
-// --- CONFIGURACIÓN ---
 const MY_PHONE_NUMBER = "523511563006";
+const TARGET_DATE = "Jan 07, 2026 00:00:00"; 
 
 // Constantes de Logos
 const LOGOS = {
@@ -19,7 +19,10 @@ const LOGOS = {
     deezer: "img/logo/deezer-logo.webp",
     capcut: "img/logo/capcut-logo.webp",
     chat_gpt: "img/logo/chat-gpt-logo.webp",
-    gemini: "img/logo/gemini-logo.webp"
+    gemini: "img/logo/gemini-logo.webp",
+    offer1: "img/oferta-1.webp",
+    offer2: "img/oferta-2.webp",
+    offer3: "img/oferta-3.webp"
 };
 
 // COLORES
@@ -40,16 +43,40 @@ const COLORS = {
     deezer: "from-purple-500 to-purple-900",
     capcut: "from-gray-800 to-black",
     chat_gpt: "from-[#00A67E] to-[#014D42]",
-    gemini: "from-[#4285F4] to-[#A142F4]"
+    gemini: "from-[#4285F4] to-[#A142F4]",
+    offer: "from-[#D4A348] to-gray-700"
 };
 
 // --- DATOS ---
 const products = [
+    // COMBOS ESPECIALES AÑO NUEVO
+    {
+        id: 901, name: "Combo Reyes Magos", category: "special", price: "$205 MXN", 
+        description: "El regalo ideal: Netflix, Disney Premium + Paramount.", 
+        features: ["Ideal para niños", "Regalo perfecto"], 
+        image: LOGOS.offer1, color: COLORS.offer, logoClass: "h-24 w-auto",
+        variants: [{ label: "Combo Reyes Magos", price: "$205 MXN" }]
+    },
+    {
+        id: 902, name: "Combo Música y Entretenimiento", category: "special", price: "$250 MXN", 
+        description: "Tu música favorita sin interrupciones y series/películas para pasar un buen rato: Spotify + Netflix.", 
+        features: ["Spotify Premium 3 meses", "Netflix 1 mes", "Balance perfecto"], 
+        image: LOGOS.offer2, color: COLORS.offer, logoClass: "h-28 w-auto",
+        variants: [{ label: "Combo Música y Entretenimiento", price: "$250 MXN" }]
+    },
+    {
+        id: 903, name: "Mega Pack Año Nuevo", category: "special", price: "$350 MXN", 
+        description: "Empieza el 2026 con TODO: Netflix + Disney Premium + HBO Max Platino y Prime Video.", 
+        features: ["Los gigantes del Streaming", "Ahorro Máximo", "Edición Limitada"], 
+        image: LOGOS.offer3, color: COLORS.offer, logoClass: "w-auto",
+        variants: [{ label: "Mega Pack Año Nuevo", price: "$350 MXN" }]
+    },
+
     // PERFILES (streaming, música, herramientas)
     { 
         id: 101, name: "VIX", category: "streaming", price: "$65 MXN", 
         description: "Telenovelas, series latinas y Liga MX.", 
-        features: ["Deportes vivo", "Sin anuncios", "Originales", "Garantía"], 
+        features: ["Deportes vivo", "Originales", "Garantía"], 
         image: LOGOS.vix, color: COLORS.vix 
     },
     { 
@@ -61,14 +88,14 @@ const products = [
     { 
         id: 103, name: "Crunchyroll", category: "streaming", price: "$65 MXN", 
         description: "La colección de anime más grande del mundo.", 
-        features: ["Mega Fan", "Sin anuncios y con acceso a todo el contenido", "Acceso a Crunchyroll Game Vault", "Garantía"], 
+        features: ["Mega Fan", "Acceso a todo el contenido", "Acceso a Crunchyroll Game Vault", "Garantía"], 
         image: LOGOS.crunchy, color: COLORS.crunchy 
     },
     { 
         id: 104, name: "Disney+", category: "streaming", price: "$75 - $100 MXN", 
         description: "Disney, Pixar, Marvel y Star Wars.", 
         features: ["Películas/Series", "Perfil privado", "Garantía"], 
-        image: LOGOS.disney, color: COLORS.disney,
+        image: LOGOS.disney, color: COLORS.disney, logoClass: "h-24 w-auto",
         variants: [
             { label: "Estándar (con anuncios)", price: "$75 MXN" },
             { label: "Premium", price: "$100 MXN" }
@@ -84,7 +111,7 @@ const products = [
         id: 106, name: "Prime Video", category: "streaming", price: "$80 MXN", 
         description: "Series Amazon Originals y envíos gratis.", 
         features: ["Prime Video", "Series exclusivas", "UHD", "Soporte"], 
-        image: LOGOS.prime, color: COLORS.prime 
+        image: LOGOS.prime, color: COLORS.prime, logoClass: "h-20 w-auto",
     },
     { 
         id: 107, name: "HBO Max", category: "streaming", price: "$70 - $130 MXN", 
@@ -96,7 +123,7 @@ const products = [
     { 
         id: 108, name: "Netflix", category: "streaming", price: "$95 MXN", 
         description: "Perfil privado en cuenta compartida. Calidad 4K UHD.", 
-        features: ["1 Pantalla", "Calidad 4K", "Sin anuncios", "Garantía"], 
+        features: ["1 Pantalla", "Calidad 4K", "Garantía"], 
         image: LOGOS.netflix, color: COLORS.netflix 
     },
     { 
@@ -122,14 +149,14 @@ const products = [
     { 
         id: 201, name: "Deezer", category: "music", price: "$60 MXN", 
         description: "Tu música favorita, siempre contigo.", 
-        features: ["HiFi", "Sin anuncios", "Offline"], 
+        features: ["Sin anuncios", "Offline"], 
         image: LOGOS.deezer, color: COLORS.deezer
     },
     { 
         id: 202, name: "Spotify Premium", category: "music", price: "$75 MXN", 
         description: "Millones de canciones. Escucha offline.", 
         features: ["Sin anuncios", "Offline", "Alta calidad"], 
-        image: LOGOS.spotify, color: COLORS.spotify,
+        image: LOGOS.spotify, color: COLORS.spotify, logoClass: "h-20 w-auto",
         variants: [{ label: "1 Mes", price: "$75 MXN" }, { label: "3 Meses", price: "$200 MXN" }]
     },
     { 
@@ -149,7 +176,7 @@ const products = [
         id: 303, name: "ChatGPT Plus", category: "tool", price: "$150 MXN", 
         description: "IA avanzada para tus tareas.", 
         features: ["Modelos avanzados", "Rápido", "Privacidad"], 
-        image: LOGOS.chat_gpt, color: COLORS.chat_gpt
+        image: LOGOS.chat_gpt, color: COLORS.chat_gpt, logoClass: "h-24 w-auto",
     },
     { 
         id: 304, name: "Office 365", category: "tool", price: "$280 MXN", 
@@ -175,7 +202,7 @@ const products = [
         id: 402, name: "Disney+ (cuenta completa)", category: "full", price: "$130 - $290 MXN", 
         description: "Cuenta completa Disney+.", 
         features: ["7 Perfiles", "2 pantallas - Estándar (con anuncios)", "4 pantallas - Premium (sin anuncios)", "Privada", "Ideal para revender los perfiles"], 
-        image: LOGOS.disney, color: COLORS.disney,
+        image: LOGOS.disney, color: COLORS.disney, logoClass: "h-24 w-auto",
         variants: [{ label: "Estándar", price: "$130 MXN" }, { label: "Premium (+ESPN)", price: "$290 MXN" }]
     },
     { 
@@ -190,7 +217,7 @@ const products = [
         id: 404, name: "Prime Video (cuenta completa)", category: "full", price: "$85 MXN", 
         description: "Cuenta completa Prime Video.", 
         features: ["6 Perfiles", "3 Pantallas", "Privada", "Ideal para revender los perfiles"], 
-        image: LOGOS.prime, color: COLORS.prime 
+        image: LOGOS.prime, color: COLORS.prime, logoClass: "h-20 w-auto",
     },
 
     { 
@@ -249,7 +276,7 @@ const products = [
         id: 520, name: "Combos con Disney+", category: "duo", price: "$125 - $165 MXN", 
         description: "Combina Disney+ con tu servicio favorito.", 
         features: ["1 Perfil Disney", "1 Perfil extra", "Ahorro total"], 
-        image: LOGOS.disney, color: COLORS.disney, 
+        image: LOGOS.disney, color: COLORS.disney, logoClass: "h-24 w-auto",
         variants: [
             { label: "Estándar (c/anuncios) con Crunchyroll", price: "$125 MXN" },
             { label: "Estándar (c/anuncios) con VIX", price: "$125 MXN" },
@@ -265,7 +292,7 @@ const products = [
         id: 530, name: "Combos con Prime", category: "duo", price: "$135 MXN", 
         description: "Combina Prime Video con otros.", 
         features: ["1 Perfil Prime", "1 Perfil extra", "Ahorro total"], 
-        image: LOGOS.prime, color: COLORS.prime, 
+        image: LOGOS.prime, color: COLORS.prime, logoClass: "h-20 w-auto",
         variants: [{ label: "con Crunchyroll", price: "$135 MXN" }, { label: "con VIX", price: "$135 MXN" }, { label: "con Paramount+", price: "$135 MXN" }]
     },
     {
@@ -298,6 +325,10 @@ function createCardHTML(product, index) {
     else if(product.category === 'tool') { label = "Herramienta"; badgeColor = "bg-slate-600/50"; }
     else if(product.category === 'full') { label = "Completa"; badgeColor = "bg-yellow-600/50 text-yellow-100"; }
     else if(product.category === 'duo') { label = "Combo Dúo"; badgeColor = "bg-purple-600/50 text-purple-100"; }
+    // AGREGADO: Etiqueta para especiales
+    else if(product.category === 'special') { label = "Año Nuevo"; badgeColor = "bg-yellow-500/80 text-black font-bold animate-pulse"; }
+
+    const logoClass = product.logoClass || "h-16 w-auto max-w-[70%]";
 
     return `
         <div class="glass-card rounded-2xl overflow-hidden cursor-pointer fade-in hover:scale-[1.02] transition-all duration-300" 
@@ -306,7 +337,7 @@ function createCardHTML(product, index) {
             
             <div class="h-32 bg-gradient-to-br ${product.color} flex items-center justify-center relative group overflow-hidden">
                 <img src="${product.image}" alt="${product.name}" 
-                     class="h-16 w-auto max-w-[70%] object-contain drop-shadow-2xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-2 brightness-0 invert">
+                     class="${logoClass} object-contain drop-shadow-2xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-2 brightness-0 invert">
                 
                 <div class="absolute bottom-2 right-2 ${badgeColor} backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold text-white uppercase tracking-wider border border-white/10 shadow-lg">
                     ${label}
@@ -330,96 +361,88 @@ function createCardHTML(product, index) {
     `;
 }
 
+// --- FUNCIÓN DE RENDERIZADO INTELIGENTE (Detecta si ya expiró) ---
 function renderProducts(items) {
     gridContainer.innerHTML = '';
-    
-    if (items.length === 0) {
-        emptyState.classList.remove('hidden');
-        return;
-    }
+    if (items.length === 0) { emptyState.classList.remove('hidden'); return; }
     emptyState.classList.add('hidden');
 
-    // Filtrar items por grupos
-    const profiles = items.filter(p => ['streaming', 'music', 'tool'].includes(p.category));
-    const fullAccounts = items.filter(p => p.category === 'full');
-    const duos = items.filter(p => p.category === 'duo');
-    const specials = items.filter(p => p.category === 'special');
+    // 1. CHEQUEO DE FECHA: ¿Ya pasó año nuevo?
+    const now = new Date().getTime();
+    const target = new Date(TARGET_DATE).getTime();
+    const isExpired = now > target;
 
-    // Función para dibujar una sección
+    // 2. Si ya expiró, FILTRAMOS los especiales fuera de la lista
+    let activeItems = items;
+    if (isExpired) {
+        activeItems = items.filter(p => p.category !== 'special');
+        
+        // También ocultamos el botón del menú
+        const menuBtn = document.getElementById('specialMenuBtn');
+        if(menuBtn) menuBtn.classList.add('hidden');
+        
+        // Y ocultamos el contador
+        const countdown = document.getElementById('countdownContainer');
+        if(countdown) countdown.classList.add('hidden');
+    }
+
+    const profiles = activeItems.filter(p => ['streaming', 'music', 'tool'].includes(p.category));
+    const fullAccounts = activeItems.filter(p => p.category === 'full');
+    const duos = activeItems.filter(p => p.category === 'duo');
+    const specials = activeItems.filter(p => p.category === 'special');
+
     const drawSection = (title, icon, itemsList, colorClass = "text-white") => {
-        if(itemsList.length === 0) return; // Si no hay items, no dibuja sección
-
-        // Título de Sección
+        if(itemsList.length === 0) return;
         const sectionHeader = `
             <div class="flex items-center gap-3 mb-6 px-2 fade-in">
-                <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
-                    <i class="fas ${icon} text-xl ${colorClass}"></i>
-                </div>
+                <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center"><i class="fas ${icon} text-xl ${colorClass}"></i></div>
                 <h2 class="text-2xl font-bold text-white tracking-tight">${title}</h2>
                 <div class="h-px flex-grow bg-gradient-to-r from-white/10 to-transparent ml-4"></div>
-            </div>
-        `;
-
-        // Grid de esa sección
+            </div>`;
         const cardsHTML = itemsList.map((product, idx) => createCardHTML(product, idx)).join('');
-        
-        const sectionGrid = `
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                ${cardsHTML}
-            </div>
-        `;
-
-        gridContainer.innerHTML += (sectionHeader + sectionGrid);
+        gridContainer.innerHTML += `${sectionHeader}<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">${cardsHTML}</div>`;
     };
 
-    // 3. Dibujar las secciones en orden
+    // ORDEN
+    drawSection("Especiales de Año Nuevo", "fa-star", specials, "text-yellow-400 animate-pulse");
     drawSection("Perfiles y Suscripciones", "fa-user", profiles, "text-cyan-400");
     drawSection("Combos Dúo", "fa-user-friends", duos, "text-purple-400");
     drawSection("Cuentas Completas", "fa-crown", fullAccounts, "text-yellow-400");
-    drawSection("Ediciones Especiales", "fa-star", specials, "text-orange-400");
 }
 
 function filterProducts() {
     const searchTerm = searchInput.value.toLowerCase();
     const category = categoryFilter.value;
-    
     const filtered = products.filter(product => {
         const matchesSearch = product.name.toLowerCase().includes(searchTerm) || product.description.toLowerCase().includes(searchTerm);
-        
         let matchesCategory = true;
         
-        // MODIFICACIÓN DEL FILTRO: Si la categoría es 'streaming', incluye también 'full'
-        if (category === 'streaming') {
-            matchesCategory = product.category === 'streaming' || product.category === 'full';
-        } else if (category === 'full') {
-             matchesCategory = product.category === 'full';
-        } else if (category !== 'all') {
-             matchesCategory = product.category === category;
-        }
+        // Verifica si la categoría es especial y ya expiró para no buscarla
+        const isExpired = new Date().getTime() > new Date(TARGET_DATE).getTime();
+        if(isExpired && product.category === 'special') return false;
 
+        if (category === 'streaming') matchesCategory = product.category === 'streaming' || product.category === 'full';
+        else if (category === 'full') matchesCategory = product.category === 'full';
+        else if (category !== 'all') matchesCategory = product.category === category;
         return matchesSearch && matchesCategory;
     });
     renderProducts(filtered);
 }
 
-// Menú Drawer
 function filterProductsByMenu(menuType) {
     toggleDrawer();
     searchInput.value = "";
     
-    let filtered = [];
-    if (menuType === 'all') {
-        filtered = products;
-        categoryFilter.value = 'all';
-    } else {
-        // MODIFICACIÓN DEL FILTRO DRAWER: Si es 'streaming', incluye 'full'
-        if (menuType === 'streaming') {
-             filtered = products.filter(p => p.category === 'streaming' || p.category === 'full');
-        } else {
-             filtered = products.filter(p => p.category === menuType);
-        }
+    // Si elige especiales pero ya expiraron, no hacer nada
+    const isExpired = new Date().getTime() > new Date(TARGET_DATE).getTime();
+    if(menuType === 'special' && isExpired) return;
 
-        // Ajuste visual del select
+    let filtered = [];
+    if (menuType === 'all') { filtered = products; categoryFilter.value = 'all'; }
+    else {
+        if (menuType === 'streaming') filtered = products.filter(p => p.category === 'streaming' || p.category === 'full');
+        else filtered = products.filter(p => p.category === menuType);
+        
         if(['streaming', 'music', 'tool'].includes(menuType)) categoryFilter.value = menuType;
         else categoryFilter.value = 'all';
     }
@@ -441,59 +464,35 @@ const mBtn = document.getElementById('modalBuyBtn');
 const mCat = document.getElementById('modalCategory');
 const mOptionsContainer = document.getElementById('modalOptionsContainer');
 const mOptionsSelect = document.getElementById('modalOptionsSelect');
-
 let currentProduct = null;
 
-// Buscamos el producto por ID en vez de pasar objeto (más seguro en HTML string)
 window.openModal = function(productId) {
     const product = products.find(p => p.id === productId);
     if(!product) return;
-
     currentProduct = product;
     mTitle.innerText = product.name;
     mDesc.innerText = product.description;
-    
-    // Categoría Texto
-    let catText = "Herramienta";
-    if(product.category === 'full') catText = "Completa";
-    else if(product.category === 'duo') catText = "Combo Dúo";
-    else if(product.category === 'streaming') catText = "Perfil streaming";
-    mCat.innerText = catText;
-
-    // Header Color y Logo
+    mCat.innerText = product.category === 'special' ? "Oferta Año Nuevo" : (product.category === 'full' ? "Cuenta Completa" : "Servicio");
     mHeader.className = `h-32 w-full bg-gradient-to-r ${product.color} flex items-center justify-center p-4`;
-    mHeader.innerHTML = `<img src="${product.image}" class="h-full w-auto object-contain drop-shadow-2xl brightness-0 invert" alt="${product.name}">`;
-
-    // Features
-    mFeatures.innerHTML = product.features.map(feat => `<li class="flex items-center gap-2 text-gray-300"><i class="fas fa-check-circle text-cyan-500 text-xs"></i> ${feat}</li>`).join('');
-
-    // Select de Opciones
+    const logoClass = product.logoClass || "h-16 w-auto max-w-[70%]";
+    mHeader.innerHTML = `<img src="${product.image}" class="${logoClass} object-contain drop-shadow-2xl brightness-0 invert">`;
+    mFeatures.innerHTML = product.features.map(f => `<li class="flex items-center gap-2 text-gray-300"><i class="fas fa-check-circle text-cyan-500 text-xs"></i> ${f}</li>`).join('');
     mOptionsSelect.innerHTML = ''; 
     if (product.variants && product.variants.length > 0) {
         mOptionsContainer.classList.remove('hidden');
-        product.variants.forEach((variant, idx) => {
-            const option = document.createElement('option');
-            option.value = idx;
-            option.text = `${variant.label} - ${variant.price}`;
-            mOptionsSelect.appendChild(option);
+        product.variants.forEach((v, idx) => {
+            const opt = document.createElement('option');
+            opt.value = idx;
+            opt.text = `${v.label} - ${v.price}`;
+            mOptionsSelect.appendChild(opt);
         });
-
         mPrice.innerText = product.variants[0].price;
-
-        mOptionsSelect.onchange = (e) => {
-            const index = e.target.value;
-            mPrice.style.opacity = '0';
-            setTimeout(() => {
-                mPrice.innerText = product.variants[index].price;
-                mPrice.style.opacity = '1';
-            }, 150);
-        };
+        mOptionsSelect.onchange = (e) => { mPrice.innerText = product.variants[e.target.value].price; };
     } else {
         mOptionsContainer.classList.add('hidden');
         mPrice.innerText = product.price;
         mOptionsSelect.onchange = null;
     }
-    
     mBtn.onclick = () => handleBuyClick();
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
@@ -503,7 +502,6 @@ function handleBuyClick() {
     if (!currentProduct) return;
     let finalPrice = currentProduct.price;
     let detailText = ""; 
-
     if (currentProduct.variants && currentProduct.variants.length > 0 && !mOptionsContainer.classList.contains('hidden')) {
         const index = mOptionsSelect.value;
         const variant = currentProduct.variants[index];
@@ -514,47 +512,75 @@ function handleBuyClick() {
     window.open(`https://wa.me/${MY_PHONE_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
-window.closeModal = function() {
-    modal.classList.add('hidden');
-    document.body.style.overflow = 'auto';
+window.closeModal = function() { modal.classList.add('hidden'); document.body.style.overflow = 'auto'; }
+
+// --- LÓGICA DEL CONTADOR (CORREGIDA) ---
+function initCountdown() {
+    const countdownElement = document.getElementById('countdownTimer');
+    if (!countdownElement) return;
+
+    const countDate = new Date(TARGET_DATE).getTime();
+    
+    // Guardamos el intervalo en una variable para poder detenerlo
+    const interval = setInterval(() => {
+        const now = new Date().getTime();
+        const gap = countDate - now;
+
+        if (gap < 0) {
+            clearInterval(interval); // 1. Detenemos el reloj
+            
+            // 2. Ocultamos el contador y el botón del menú
+            const container = document.getElementById('countdownContainer');
+            const menuBtn = document.getElementById('specialMenuBtn');
+            if(container) container.classList.add('hidden');
+            if(menuBtn) menuBtn.classList.add('hidden');
+
+            // 3. ACTUALIZAMOS LAS CARDS
+            // Al llamar a esta función, ella misma revisa la fecha y filtra los especiales
+            renderProducts(products); 
+            
+            return; 
+        }
+
+        // Cálculos de tiempo
+        const second = 1000;
+        const minute = second * 60;
+        const hour = minute * 60;
+        const day = hour * 24;
+
+        const d = Math.floor(gap / day);
+        const h = Math.floor((gap % day) / hour);
+        const m = Math.floor((gap % hour) / minute);
+        const s = Math.floor((gap % minute) / second);
+
+        document.getElementById('cd-days').innerText = d < 10 ? "0" + d : d;
+        document.getElementById('cd-hours').innerText = h < 10 ? "0" + h : h;
+        document.getElementById('cd-minutes').innerText = m < 10 ? "0" + m : m;
+        document.getElementById('cd-seconds').innerText = s < 10 ? "0" + s : s;
+    }, 1000);
 }
 
-// --- UTILS ---
+// UTILS
 window.toggleChat = function() {
     const widget = document.getElementById('chatWidget');
-    const isHidden = widget.classList.contains('chat-hidden');
-    if (isHidden) {
-        widget.classList.remove('hidden');
-        setTimeout(() => { widget.classList.remove('chat-hidden'); widget.classList.add('chat-visible'); document.getElementById('chatInput').focus(); }, 10);
-    } else {
-        widget.classList.remove('chat-visible'); widget.classList.add('chat-hidden'); setTimeout(() => { widget.classList.add('hidden'); }, 300);
-    }
+    if (widget.classList.contains('chat-hidden')) { widget.classList.remove('hidden'); setTimeout(() => { widget.classList.remove('chat-hidden'); widget.classList.add('chat-visible'); }, 10); } 
+    else { widget.classList.remove('chat-visible'); widget.classList.add('chat-hidden'); setTimeout(() => { widget.classList.add('hidden'); }, 300); }
 }
-
 window.sendCustomMessage = function() {
     const input = document.getElementById('chatInput');
     const text = input.value.trim();
-    if (!text) { input.classList.add('border-red-500'); setTimeout(() => input.classList.remove('border-red-500'), 1000); return; }
+    if (!text) return;
     window.open(`https://wa.me/${MY_PHONE_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
     input.value = ''; toggleChat();
 }
-
 window.toggleDrawer = function() {
-    const drawer = document.getElementById('appDrawer');
-    const overlay = document.getElementById('drawerOverlay');
-    const body = document.body;
-    const isOpen = overlay.classList.contains('overlay-visible');
-    if (!isOpen) {
-        overlay.classList.remove('hidden'); setTimeout(() => { overlay.classList.add('overlay-visible'); drawer.classList.add('drawer-open'); }, 10); body.style.overflow = 'hidden'; 
-    } else {
-        drawer.classList.remove('drawer-open'); overlay.classList.remove('overlay-visible'); setTimeout(() => { overlay.classList.add('hidden'); body.style.overflow = 'auto'; }, 300);
-    }
+    const drawer = document.getElementById('appDrawer'), overlay = document.getElementById('drawerOverlay');
+    if (!overlay.classList.contains('overlay-visible')) { overlay.classList.remove('hidden'); setTimeout(() => { overlay.classList.add('overlay-visible'); drawer.classList.add('drawer-open'); }, 10); document.body.style.overflow = 'hidden'; } 
+    else { drawer.classList.remove('drawer-open'); overlay.classList.remove('overlay-visible'); setTimeout(() => { overlay.classList.add('hidden'); document.body.style.overflow = 'auto'; }, 300); }
 }
-
 window.toggleDisclaimer = function() {
     const modal = document.getElementById('disclaimerModal');
-    if (modal.classList.contains('hidden')) modal.classList.remove('hidden');
-    else modal.classList.add('hidden');
+    modal.classList.contains('hidden') ? modal.classList.remove('hidden') : modal.classList.add('hidden');
 }
 
 // Global Event Listeners
@@ -567,5 +593,6 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Init
+// INICIALIZACIÓN
 renderProducts(products);
+initCountdown();
