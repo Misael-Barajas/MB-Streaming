@@ -74,7 +74,7 @@ const products = [
     { id: 109, name: "Apple TV+", category: "streaming", price: "$89 MXN", originalPrice: "$95 MXN", description: "Originales aclamados por la crítica, exclusivos de Apple.", features: ["Máxima calidad", "Perfil privado", "Garantía y soporte"], image: LOGOS.apple_tv, color: "from-zinc-800 to-black" },
     { id: 110, name: "YouTube Premium", category: "streaming", price: "Desde $65 MXN hasta $ MXN", originalPrice: "Desde $90 hasta $310", description: "Mira millones de videos sin interrupciones por anuncios.", features: ["Descargas sin conexión", "YouTube Music incluido", "Garantía y soporte"], image: LOGOS.youtube, color: COLORS.youtube, variants: [{ label: "1 Mes", price: "$65 MXN", originalPrice: "$90 MXN" }, { label: "2 Meses", price: "$110 MXN", originalPrice: "$150" }, { label: "4 Meses", price: "$130 MXN", originalPrice: "$310 MXN" }] },
     
-    // Música y Herramientas (Precios Navideños)
+    // Música y Herramientas
     { id: 201, name: "Deezer", category: "music", price: "$50 MXN", originalPrice: "$60 MXN", description: "Reproducción de música con sonido de alta fidelidad (HiFi).", features: ["Calidad HiFi", "Escucha sin conexión", "Garantía y soporte"], image: LOGOS.deezer, color: COLORS.deezer },
     { id: 202, name: "Spotify", category: "music", price: "Desde $65 hasta $129 MXN", originalPrice: "Desde $75 hasta $200", description: "El servicio de música más popular para escuchar tus playlists sin anuncios.", features: ["Premium sin anuncios", "Modo offline", "Garantía y soporte"], image: LOGOS.spotify, color: COLORS.spotify, logoClass: "h-20 w-auto", variants: [{ label: "1 Mes", price: "$65 MXN", originalPrice: "$75 MXN" }, { label: "3 Meses", price: "$129 MXN", originalPrice: "$200 MXN" }] },
     { id: 301, name: "Canva Pro", category: "tool", price: "Desde $40 hasta $159 MXN", originalPrice: "Desde $50 hasta $400", description: "Herramienta de diseño gráfico online con funciones Premium.", features: ["Acceso Pro", "Plantillas premium", "Garantía y soporte"], image: LOGOS.canva, color: COLORS.canva, variants: [{ label: "1 Mes", price: "$40 MXN", originalPrice: "$50 MXN" }, { label: "3 Meses", price: "$89 MXN", originalPrice: "$120 MXN" }, { label: "1 Año", price: "$159 MXN", originalPrice: "$400 MXN" }] },
@@ -83,7 +83,7 @@ const products = [
     { id: 305, name: "Gemini Adv", category: "tool", price: "$89 MXN", originalPrice: "$290 MXN", description: "IA de Google con acceso a modelos más potentes (Gemini Ultra).", features: ["Gemini Advanced", "Integración con Google", "Garantía y soporte"], image: LOGOS.gemini, color: COLORS.gemini },
     { id: 304, name: "Office 365", category: "tool", price: "Desde $220 hasta $450 MXN", originalPrice: "Antes $450", description: "Suite de productividad de Microsoft con 1TB de almacenamiento.", features: ["Office para 5 dispositivos", "1TB en la nube", "Garantía y soporte"], image: LOGOS.office, color: COLORS.office, variants: [{ label: "1 año", price: "$220 MXN", originalPrice: "$950 MXN" }, { label: "6 meses", price: "$450 MXN" }] },
 
-    // CUENTAS COMPLETAS (Precios Navideños)
+    // CUENTAS COMPLETAS
     { id: 406, name: "Viki Rakuten (Completa)", category: "full", price: "$95 MXN", originalPrice: "$100 MXN", description: "Cuenta privada con acceso a todo el catálogo de dramas asiáticos.", features: ["Cuenta completa privada", "Viki Pass Plus", "Visualización en HD"], image: LOGOS.viki, color: COLORS.viki },
     { id: 405, name: "Crunchyroll (Completa)", category: "full", price: "$69 MXN", originalPrice: "$130 MXN", description: "Cuenta privada para anime sin límites.", features: ["Cuenta completa privada", "Plan Mega Fan", "Sin anuncios"], image: LOGOS.crunchy, color: COLORS.crunchy },
     { id: 402, name: "Disney+ (Completa)", category: "full", price: "Desde $139 hasta $259 MXN", originalPrice: "Antes $130", description: "Cuenta privada para disfrutar de todo el catálogo de Disney y Star+.", features: ["Cuenta completa privada", "Hasta 7 Perfiles", "Incluye ESPN (solo Premium)"], image: LOGOS.disney, color: COLORS.disney, logoClass: "h-24 w-auto", variants: [{ label: "Estándar", price: "$139 MXN", originalPrice: "$130 MXN" }, { label: "Premium (+ESPN)", price: "$259 MXN", originalPrice: "$290 MXN" }] },
@@ -102,7 +102,7 @@ const products = [
     ]},
     
     // Combos Disney+
-    { id: 520, name: "Combos con Disney+", category: "duo", price: "Desde $75 hasta $105 MXN", originalPrice: "Antes $130", description: "Combina tu perfil de Disney+ con otro servicio, ¡ahorrando \$10 MXN en total!", features: ["Ahorro de $10 MXN", "1 Perfil Disney+", "1 Perfil extra"], image: LOGOS.disney, color: COLORS.disney, logoClass: "h-24 w-auto", variants: [ 
+    { id: 520, name: "Combos con Disney+", category: "duo", price: "Desde $75 hasta $105 MXN", originalPrice: "Antes $130", description: "Combina tu perfil de Disney+ con otro servicio, ¡ahorrando \$10 MXN en total!", features: ["Ahorro de $10 MXN", "1 perfil Disney+", "1 perfil de la plataforma a elegir"], image: LOGOS.disney, color: COLORS.disney, logoClass: "h-24 w-auto", variants: [ 
         // Disney+ Estándar
         { label: "Estándar (c/anuncios) con Crunchyroll", price: "$70 MXN", originalPrice: "$130 MXN" },
         { label: "Estándar (c/anuncios) con VIX", price: "$70 MXN", originalPrice: "$130 MXN" },
@@ -116,20 +116,20 @@ const products = [
     ]},
     
     // Combos Prime Video
-    { id: 530, name: "Combos con Prime", category: "duo", price: "$70 MXN", originalPrice: "$135 MXN", description: "Combina tu perfil de Prime Video con otro servicio, ¡ahorrando \$10 MXN en total!", features: ["Ahorro de $10 MXN", "1 Perfil Prime Video", "1 Perfil extra"], image: LOGOS.prime, color: COLORS.prime, logoClass: "h-20 w-auto", variants: [
+    { id: 530, name: "Combos con Prime Video", category: "duo", price: "$70 MXN", originalPrice: "$135 MXN", description: "Combina tu perfil de Prime Video con otro servicio, ¡ahorrando \$10 MXN en total!", features: ["Ahorro de $10 MXN", "1 perfil Prime Video", "1 perfil de la plataforma a elegir"], image: LOGOS.prime, color: COLORS.prime, logoClass: "h-20 w-auto", variants: [
         { label: "con Crunchyroll", price: "$69 MXN", originalPrice: "$135 MXN" },
         { label: "con VIX", price: "$69 MXN", originalPrice: "$135 MXN" },
         { label: "con Paramount+", price: "$69 MXN", originalPrice: "$135 MXN" }
     ]},
     
     // Combos Crunchyroll
-    { id: 540, name: "Combos con Crunchy", category: "duo", price: "$60 MXN", originalPrice: "$120 MXN", description: "Combina tu perfil de Crunchyroll con otro servicio, ¡ahorrando \$10 MXN en total!", features: ["Ahorro de $10 MXN", "1 Perfil Crunchyroll", "1 Perfil extra"], image: LOGOS.crunchy, color: COLORS.crunchy, variants: [
+    { id: 540, name: "Combos con Crunchy", category: "duo", price: "$60 MXN", originalPrice: "$120 MXN", description: "Combina tu perfil de Crunchyroll con otro servicio, ¡ahorrando \$10 MXN en total!", features: ["Ahorro de $10 MXN", "1 perfil Crunchyroll", "1 perfil de la plataforma a elegir"], image: LOGOS.crunchy, color: COLORS.crunchy, variants: [
         { label: "con VIX", price: "$59 MXN", originalPrice: "$120 MXN" },
         { label: "con Paramount+", price: "$59 MXN", originalPrice: "$120 MXN" }
     ]},
     
     // Combos VIX
-    { id: 550, name: "Combos con VIX", category: "duo", price: "$59 MXN", originalPrice: "$120 MXN", description: "Combina tu perfil de VIX con Paramount+, ¡ahorrando \$10 MXN en total!", features: ["Ahorro de $10 MXN", "1 Perfil VIX", "1 Perfil Paramount+"], image: LOGOS.vix, color: COLORS.vix, variants: [
+    { id: 550, name: "Combos con VIX", category: "duo", price: "$59 MXN", originalPrice: "$120 MXN", description: "Combina tu perfil de VIX con Paramount+, ¡ahorrando \$10 MXN en total!", features: ["Ahorro de $10 MXN", "1 perfil VIX", "1 perfil Paramount+"], image: LOGOS.vix, color: COLORS.vix, variants: [
         { label: "con Paramount+", price: "$59 MXN", originalPrice: "$120 MXN" }
     ]}
 ];
@@ -147,9 +147,9 @@ function createCardHTML(product, index) {
     else if(product.category === 'music') { label = "Música"; badgeColor = "bg-green-600/50"; }
     else if(product.category === 'tool') { label = "Herramienta"; badgeColor = "bg-slate-600/50"; }
     else if(product.category === 'full') { label = "Completa"; badgeColor = "bg-yellow-600/50 text-yellow-100"; }
-    else if(product.category === 'duo') { label = "Combo Dúo"; badgeColor = "bg-purple-600/50 text-purple-100"; }
+    else if(product.category === 'duo') { label = "Combo dúo"; badgeColor = "bg-purple-600/50 text-purple-100"; }
     else if(product.category === 'special') { label = "Navidad"; badgeColor = "bg-yellow-500/80 text-black font-bold animate-pulse"; }
-    else if(product.category === 'custom') { label = "Tú Eliges"; badgeColor = "bg-gradient-to-r from-indigo-500 to-pink-500 text-white font-bold"; }
+    else if(product.category === 'custom') { label = "Tú eliges"; badgeColor = "bg-gradient-to-r from-indigo-500 to-pink-500 text-white font-bold"; }
 
     const logoClass = product.logoClass || "h-16 w-auto max-w-[70%]";
 
@@ -163,7 +163,7 @@ function createCardHTML(product, index) {
     if (product.originalPrice) {
         priceDisplay = `
             <div class="flex flex-col leading-none">
-                <span class="text-[12px] text-gray-500 line-through decoration-red-500/60 decoration-1 mb-0.5">${product.originalPrice}</span>
+                <span class="text-[12px] text-gray-500 line-through decoration-red-500/60 decoration-1 font-bold mb-0.5">${product.originalPrice}</span>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 font-bold text-lg">${product.price}</span>
             </div>
         `;
