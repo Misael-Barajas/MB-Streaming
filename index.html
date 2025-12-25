@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>MB Streaming</title>
+    <meta name="description" content="Suscripciones y perfiles al mejor precio: Netflix, Disney+, HBO Max, Prime Video, Spotify y más. Garantía hasta 25 días y soporte personalizado por WhatsApp.">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#0f172a">
+
+    <link rel="canonical" href="https://mb-streaming.netlify.app/">
+
+    <meta property="og:title" content="MB Streaming">
+    <meta property="og:description" content="Perfiles y suscripciones con garantía hasta 25 días. Compra fácil y soporte por WhatsApp.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mb-streaming.netlify.app/">
+    <meta property="og:image" content="img/og-cover.webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MB Streaming">
+    <meta name="twitter:description" content="Perfiles y suscripciones con garantía hasta 25 días. Soporte por WhatsApp.">
+    <meta name="twitter:image" content="img/og-cover.webp">
+
     <link rel="icon" href="img/favicon.ico">
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,9 +32,7 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Poppins', 'sans-serif'] },
                     colors: {
                         brand: {
                             dark: '#0f172a',
@@ -32,22 +48,28 @@
 
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="min-h-screen flex flex-col relative">
+
+    <noscript>
+        <div class="p-4 text-center bg-red-600 text-white text-sm">
+            Esta página necesita JavaScript para mostrar el catálogo. Actívalo para continuar.
+        </div>
+    </noscript>
 
     <nav class="sticky top-0 z-40 glass-card border-b-0 border-b-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-24">
                 <div class="flex items-center gap-3">
-                    <a href="/" class="font-bold text-3xl leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 hidden sm:block">
-                        MB Streaming
-                    </a>
-                    <a href="/" class="font-bold text-3xl leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 sm:hidden">
+                    <a href="/" class="font-bold text-3xl leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
                         MB Streaming
                     </a>
                 </div>
 
-                <button onclick="toggleDrawer()" class="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500">
-                    <i class="fas fa-bars text-2xl"></i>
+                <button onclick="toggleDrawer()"
+                    class="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    aria-label="Abrir menú">
+                    <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
@@ -61,15 +83,56 @@
                     al mejor precio
                 </span>
             </h1>
-            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
-                Disfruta de tus servicios favoritos sin gastar de más, con garantía y soporte personalizado.
+
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-6">
+                Suscripciones y perfiles con entrega rápida, garantía y soporte directo por WhatsApp.
             </p>
-            
+
+            <div class="max-w-3xl mx-auto mb-10">
+                <div class="trust-bar glass-card rounded-2xl p-4 sm:p-5 border border-white/10">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
+                        <div class="flex items-start gap-3">
+                            <div class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                                <i class="fas fa-shield-alt text-yellow-400" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-white">Garantía de hasta 25 días</p>
+                                <p class="text-xs text-gray-400">Compra con tranquilidad</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                                <i class="fab fa-whatsapp text-green-400" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-white">Soporte personalizado</p>
+                                <p class="text-xs text-gray-400">Atención directa</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                                <i class="fas fa-bolt text-cyan-400" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-white">Solución en menos de 48h</p>
+                                <p class="text-xs text-gray-400">Según términos</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 text-center text-sm text-gray-500">
+                        Consulta <span class="hover:text-white underline decoration-dotted cursor-pointer" onclick="toggleDisclaimer()">Términos y garantía</span> para conocer las condiciones.
+                    </div>
+                </div>
+            </div>
+
             <div id="countdownContainer" class="mb-12 fade-in">
                 <p class="text-sm uppercase tracking-widest text-yellow-400 font-bold mb-4 animate-pulse">
-                    <i class="fas fa-star mr-2"></i> Ofertas y precios especiales terminan en:
+                    <i class="fas fa-star mr-2" aria-hidden="true"></i> Ofertas y precios especiales terminan en:
                 </p>
-                <div id="countdownTimer" class="flex flex-wrap justify-center gap-3 sm:gap-6">
+                <div id="countdownTimer" class="flex flex-wrap justify-center gap-3 sm:gap-6" aria-label="Temporizador de ofertas">
                     <div class="glass-card w-20 h-20 sm:w-24 sm:h-24 rounded-2xl flex flex-col items-center justify-center border border-yellow-500/30 shadow-[0_0_15px_rgba(234,179,8,0.1)]">
                         <span id="cd-days" class="text-2xl sm:text-4xl font-bold text-white">00</span>
                         <span class="text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider">Días</span>
@@ -91,11 +154,16 @@
 
             <div class="flex flex-col md:flex-row justify-center gap-4 max-w-3xl mx-auto">
                 <div class="relative w-full md:w-2/3">
-                    <i class="fas fa-search absolute top-1/2 -translate-y-1/2 left-6 text-gray-500"></i>
-                    <input type="text" id="searchInput" placeholder="Buscar plataforma (ej: Netflix, HBO)..." 
-                        class="w-full bg-slate-800/50 border border-slate-700 rounded-full py-3 pl-12 pr-4 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-white placeholder-gray-500">
+                    <i class="fas fa-search absolute top-1/2 -translate-y-1/2 left-6 text-gray-500" aria-hidden="true"></i>
+                    <input type="text" id="searchInput"
+                        placeholder="Buscar plataforma (ej: Netflix, HBO)..."
+                        class="w-full bg-slate-800/50 border border-slate-700 rounded-full py-3 pl-12 pr-4 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-white placeholder-gray-500"
+                        aria-label="Buscar plataforma">
                 </div>
-                <select id="categoryFilter" class="w-full md:w-1/3 bg-slate-800/50 border border-slate-700 rounded-full py-3 px-6 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 text-white appearance-none cursor-pointer transition-colors">
+
+                <select id="categoryFilter"
+                    class="w-full md:w-1/3 bg-slate-800/50 border border-slate-700 rounded-full py-3 px-6 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 text-white appearance-none cursor-pointer transition-colors"
+                    aria-label="Filtrar por categoría">
                     <option value="all">Todas las categorías</option>
                     <option value="special" id="optSpecial" class="text-yellow-400 font-bold">Ofertas Navideñas</option>
                     <option value="streaming">Streaming</option>
@@ -112,7 +180,7 @@
         <div id="productsGrid" class="w-full space-y-12"></div>
 
         <div id="emptyState" class="hidden text-center py-20">
-            <i class="fas fa-ghost text-6xl text-slate-700 mb-4"></i>
+            <i class="fas fa-ghost text-6xl text-slate-700 mb-4" aria-hidden="true"></i>
             <h3 class="text-xl text-gray-400">No encontramos lo que buscas</h3>
         </div>
     </main>
@@ -121,11 +189,15 @@
         <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-4">
                 <div class="flex items-center gap-2">
-                    <img src="img/logo/mb-streaming-logo.webp" alt="MB Streaming" class="h-8 w-auto">
-                    <span class="text-gray-400 text-sm">© 2025 MB Streaming</span>
+                    <img src="img/logo/mb-streaming-logo.webp" alt="MB Streaming" class="h-8 w-auto" loading="lazy" decoding="async">
+                    <span class="text-gray-500 text-sm">© 2025 MB Streaming</span>
                 </div>
-                <div>
-                    <button onclick="toggleDisclaimer()" class="text-sm text-gray-500 hover:text-white underline decoration-dotted transition-colors">
+                <span class="text-sm text-gray-500">No afiliados a marcas registradas</span>
+
+                <div class="flex items-center gap-4">
+                    <button onclick="toggleDisclaimer()"
+                        class="text-sm text-gray-500 hover:text-white underline decoration-dotted transition-colors"
+                        aria-label="Ver términos y garantía">
                         Términos y garantía
                     </button>
                 </div>
@@ -136,61 +208,66 @@
     <div id="chatWidget" class="fixed bottom-24 right-4 md:right-8 w-[90%] md:w-80 z-[60] chat-hidden origin-bottom-right">
         <div class="glass-card rounded-2xl overflow-hidden border border-slate-600 shadow-2xl shadow-purple-900/40">
             <div class="bg-gradient-to-r from-cyan-600 to-purple-600 p-4 flex items-center gap-3">
-                <div class="bg-white/20 backdrop-blur-sm w-10 h-10 flex items-center justify-center rounded-full">
-                    <i class="fas fa-headset text-white"></i>
+                <div class="bg-white/20 backdrop-blur-sm w-10 h-10 flex items-center justify-center rounded-full" aria-hidden="true">
+                    <i class="fas fa-headset text-white" aria-hidden="true"></i>
                 </div>
                 <div>
                     <h4 class="font-bold text-white text-sm">Contactar a Misael</h4>
+                    <p class="text-[11px] text-white/80">Respondo lo más rápido posible</p>
                 </div>
-                <button onclick="toggleChat()" class="ml-auto text-white/80 hover:text-white transition-colors">
-                    <i class="fas fa-times"></i>
+                <button onclick="toggleChat()" class="ml-auto text-white/80 hover:text-white transition-colors" aria-label="Cerrar chat">
+                    <i class="fas fa-times" aria-hidden="true"></i>
                 </button>
             </div>
-            
+
             <div class="p-4 bg-slate-900/95 backdrop-blur-xl">
                 <div class="bg-slate-800/50 rounded-2xl rounded-bl-sm p-3 mb-4 border border-white/5">
                     <p class="text-xs text-gray-300">👋 ¡Hola! ¿En qué puedo ayudarte hoy? Escribe tu consulta abajo.</p>
                 </div>
-                <textarea id="chatInput" rows="3" 
-                    class="w-full bg-slate-950 border border-slate-700 rounded-2xl rounded-br-sm p-3 text-sm text-white focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 resize-none transition-all placeholder-gray-600" 
-                    placeholder="Quiero información sobre..."></textarea>
-                
-                <button onclick="sendCustomMessage()" 
-                    class="w-full mt-3 btn-gradient text-white py-3 rounded-xl text-sm font-bold shadow-lg shadow-purple-500/20 flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
-                    <i class="fab fa-whatsapp text-lg"></i> Enviar Mensaje
+                <textarea id="chatInput" rows="3"
+                    class="w-full bg-slate-950 border border-slate-700 rounded-2xl rounded-br-sm p-3 text-sm text-white focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 resize-none transition-all placeholder-gray-600"
+                    placeholder="Quiero información sobre..."
+                    aria-label="Escribe tu mensaje"></textarea>
+
+                <button onclick="sendCustomMessage()"
+                    class="w-full mt-3 btn-gradient text-white py-3 rounded-xl text-sm font-bold shadow-lg shadow-purple-500/20 flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
+                    aria-label="Enviar mensaje por WhatsApp">
+                    <i class="fab fa-whatsapp text-lg" aria-hidden="true"></i> Enviar Mensaje
                 </button>
             </div>
         </div>
     </div>
 
-    <button onclick="toggleChat()" 
-        class="fixed bottom-6 right-4 md:right-8 z-[60] h-14 w-14 rounded-full btn-gradient shadow-lg shadow-purple-500/40 flex items-center justify-center text-white text-2xl hover:scale-110 transition-transform duration-300 group ring-2 ring-white/20">
-        <i class="fab fa-whatsapp group-hover:hidden transition-all"></i>
-        <i class="fas fa-comment-dots hidden group-hover:block transition-all"></i>
+    <button onclick="toggleChat()"
+        class="fixed bottom-6 right-4 md:right-8 z-[60] h-14 w-14 rounded-full btn-gradient shadow-lg shadow-purple-500/40 flex items-center justify-center text-white text-2xl hover:scale-110 transition-transform duration-300 group ring-2 ring-white/20"
+        aria-label="Abrir chat de WhatsApp">
+        <i class="fab fa-whatsapp group-hover:hidden transition-all" aria-hidden="true"></i>
+        <i class="fas fa-comment-dots hidden group-hover:block transition-all" aria-hidden="true"></i>
     </button>
 
     <div id="productModal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-        <div class="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        <div class="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity" onclick="closeModal()" aria-hidden="true"></div>
         <div class="fixed inset-0 z-10 overflow-y-auto">
             <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
                 <div class="relative transform overflow-hidden rounded-2xl glass-card text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg border border-slate-600">
-                    <button onclick="closeModal()" class="absolute right-4 top-4 text-gray-400 hover:text-white z-10 bg-black/20 rounded-full w-8 h-8 flex items-center justify-center backdrop-blur-md">
-                        <i class="fas fa-times"></i>
+                    <button id="modalCloseBtn" onclick="closeModal()" class="absolute right-4 top-4 text-gray-400 hover:text-white z-10 bg-black/20 rounded-full w-8 h-8 flex items-center justify-center backdrop-blur-md"
+                        aria-label="Cerrar ventana">
+                        <i class="fas fa-times" aria-hidden="true"></i>
                     </button>
-                    
+
                     <div id="modalHeaderColor" class="h-32 w-full bg-gradient-to-r from-cyan-600 to-purple-600 flex items-center justify-center">
-                        <i id="modalIcon" class="fas fa-play-circle text-6xl text-white/50"></i>
+                        <i id="modalIcon" class="fas fa-play-circle text-6xl text-white/50" aria-hidden="true"></i>
                     </div>
-                    
+
                     <div class="px-6 py-6">
-                        <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center justify-between mb-2 gap-2">
                             <h3 class="text-2xl font-bold text-white" id="modalTitle">Título</h3>
                             <span class="bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full text-sm font-semibold border border-cyan-500/30" id="modalCategory">Cat</span>
                         </div>
-                        
+
                         <div class="mt-4 space-y-4">
                             <p class="text-gray-300 text-sm leading-relaxed" id="modalDescription">Desc</p>
-                            
+
                             <div id="modalOptionsContainer" class="hidden">
                                 <label class="text-xs text-gray-400 uppercase font-bold tracking-wider mb-2 block">Elige tu plan:</label>
                                 <select id="modalOptionsSelect" class="w-full bg-slate-900 border border-slate-600 rounded-lg p-3 text-white text-sm focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none"></select>
@@ -200,14 +277,16 @@
                                 <h4 class="text-sm font-semibold text-gray-400 mb-2 uppercase tracking-wider">Detalles</h4>
                                 <ul class="space-y-2 text-sm text-gray-300" id="modalFeatures"></ul>
                             </div>
-                            
+
                             <div class="flex items-end justify-between mt-6 pt-4 border-t border-white/10">
                                 <div>
                                     <p class="text-xs text-gray-400">Precio</p>
                                     <p class="text-3xl font-bold text-white" id="modalPrice">$0.00</p>
                                 </div>
-                                <button id="modalBuyBtn" class="btn-gradient text-white px-6 py-3 rounded-xl font-semibold shadow-lg shadow-purple-500/25 flex items-center gap-2 transform hover:scale-105 transition-transform">
-                                    <i class="fab fa-whatsapp text-xl"></i> Comprar
+                                <button id="modalBuyBtn"
+                                    class="btn-gradient text-white px-6 py-3 rounded-xl font-semibold shadow-lg shadow-purple-500/25 flex items-center gap-2 transform hover:scale-105 transition-transform"
+                                    aria-label="Comprar por WhatsApp">
+                                    <i class="fab fa-whatsapp text-xl" aria-hidden="true"></i> Comprar
                                 </button>
                             </div>
                         </div>
@@ -217,25 +296,26 @@
         </div>
     </div>
 
-    <div id="drawerOverlay" onclick="toggleDrawer()" 
-        class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[70] hidden transition-opacity duration-300 opacity-0">
-    </div>
+    <div id="drawerOverlay" onclick="toggleDrawer()"
+        class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[70] hidden transition-opacity duration-300 opacity-0" aria-hidden="true"></div>
 
-    <aside id="appDrawer" 
-        class="fixed top-0 right-0 h-full w-80 bg-slate-900/95 backdrop-filter backdrop-blur-xl z-[80] transform translate-x-full transition-transform duration-300 ease-in-out border-l border-white/10 shadow-2xl shadow-purple-900/50 flex flex-col">
-        
+    <aside id="appDrawer"
+        class="fixed top-0 right-0 h-full w-80 bg-slate-900/95 backdrop-filter backdrop-blur-xl z-[80] transform translate-x-full transition-transform duration-300 ease-in-out border-l border-white/10 shadow-2xl shadow-purple-900/50 flex flex-col"
+        aria-label="Menú lateral">
+
         <div class="h-20 flex items-center justify-between px-6 border-b border-white/10 bg-gradient-to-r from-slate-900 to-slate-800">
             <span class="font-bold text-lg text-white">Menú</span>
-            <button onclick="toggleDrawer()" class="text-gray-400 hover:text-white transition-colors w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10">
-                <i class="fas fa-times text-lg"></i>
+            <button onclick="toggleDrawer()" class="text-gray-400 hover:text-white transition-colors w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10"
+                aria-label="Cerrar menú">
+                <i class="fas fa-times text-lg" aria-hidden="true"></i>
             </button>
         </div>
 
         <div class="flex-1 overflow-y-auto py-6 px-4 space-y-2">
-            
+
             <a href="javascript:void(0)" onclick="filterProductsByMenu('all')" class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-300 hover:bg-white/5 hover:text-cyan-400 transition-all group">
-                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
-                    <i class="fas fa-th-large text-cyan-500"></i>
+                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors" aria-hidden="true">
+                    <i class="fas fa-th-large text-cyan-500" aria-hidden="true"></i>
                 </div>
                 <div class="flex flex-col">
                     <span class="font-semibold">Catálogo completo</span>
@@ -244,8 +324,8 @@
             </a>
 
             <a href="javascript:void(0)" onclick="filterProductsByMenu('duo')" class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-300 hover:bg-white/5 hover:text-purple-400 transition-all group">
-                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-purple-500/20 transition-colors">
-                    <i class="fas fa-user-friends text-purple-500"></i>
+                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-purple-500/20 transition-colors" aria-hidden="true">
+                    <i class="fas fa-user-friends text-purple-500" aria-hidden="true"></i>
                 </div>
                 <div class="flex flex-col">
                     <span class="font-semibold">Combos dúo</span>
@@ -253,9 +333,19 @@
                 </div>
             </a>
 
+            <a href="javascript:void(0)" onclick="openBuilderFromMenu()" class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-300 hover:bg-white/5 hover:text-indigo-400 transition-all group">
+                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-indigo-500/20 transition-colors" aria-hidden="true">
+                    <i class="fas fa-layer-group text-indigo-500" aria-hidden="true"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-semibold">Arma tu combo</span>
+                    <span class="text-xs text-gray-500">Personaliza tu paquete</span>
+                </div>
+            </a>
+
             <a href="javascript:void(0)" onclick="filterProductsByMenu('full')" class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-300 hover:bg-white/5 hover:text-yellow-400 transition-all group">
-                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-yellow-500/20 transition-colors">
-                    <i class="fas fa-crown text-yellow-500"></i>
+                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-yellow-500/20 transition-colors" aria-hidden="true">
+                    <i class="fas fa-crown text-yellow-500" aria-hidden="true"></i>
                 </div>
                 <div class="flex flex-col">
                     <span class="font-semibold">Cuentas completas</span>
@@ -263,13 +353,12 @@
                 </div>
             </a>
 
-
             <div class="h-px bg-white/10 my-4 mx-4"></div>
 
             <div class="relative" id="specialMenuBtn">
                 <a href="javascript:void(0)" onclick="filterProductsByMenu('special')" class="flex items-center gap-4 px-4 py-3 my-5 rounded-xl bg-gradient-to-r from-orange-900/20 to-red-900/20 border border-orange-500/20 hover:border-orange-500/50 transition-all group">
-                    <div class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center shadow-lg shadow-orange-500/20">
-                        <i class="fas fa-gift text-orange-400 group-hover:animate-bounce"></i>
+                    <div class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center shadow-lg shadow-orange-500/20" aria-hidden="true">
+                        <i class="fas fa-gift text-orange-400 group-hover:animate-bounce" aria-hidden="true"></i>
                     </div>
                     <div class="flex flex-col">
                         <span class="font-bold text-orange-100">Combos especiales</span>
@@ -280,44 +369,51 @@
                     ¡Limitado!
                 </span>
             </div>
+
         </div>
 
         <div class="p-6 border-t border-white/10 bg-slate-950/50">
-            <button onclick="toggleDisclaimer()" class="w-full py-3 rounded-xl border border-white/10 text-sm font-semibold text-gray-300 hover:bg-white/5 hover:text-white transition-all flex items-center justify-center gap-2">
-                <i class="fa-solid fa-circle-info"></i> Términos y garantía
+            <button onclick="toggleDisclaimer()" class="w-full py-3 rounded-xl border border-white/10 text-sm font-semibold text-gray-300 hover:bg-white/5 hover:text-white transition-all flex items-center justify-center gap-2"
+                aria-label="Abrir términos y garantía">
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i> Términos y garantía
             </button>
         </div>
     </aside>
 
-    <div id="disclaimerModal" class="fixed inset-0 z-[110] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-        <div class="fixed inset-0 bg-black/90 backdrop-blur-md transition-opacity" onclick="toggleDisclaimer()"></div>
+    <div id="disclaimerModal" class="fixed inset-0 z-[110] hidden" aria-labelledby="disclaimer-title" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-black/90 backdrop-blur-md transition-opacity" onclick="toggleDisclaimer()" aria-hidden="true"></div>
         <div class="fixed inset-0 z-10 overflow-y-auto">
             <div class="flex min-h-full items-center justify-center p-4 text-center">
                 <div class="relative transform overflow-hidden rounded-2xl bg-slate-900 border border-white/10 text-left shadow-2xl transition-all sm:w-full sm:max-w-lg">
                     <div class="p-6">
                         <div class="flex items-center gap-3 mb-4 text-yellow-500">
-                            <i class="fas fa-shield-alt text-2xl"></i>
-                            <h3 class="text-lg font-bold text-white">Términos y garantía</h3>
+                            <i class="fas fa-shield-alt text-2xl" aria-hidden="true"></i>
+                            <h3 id="disclaimer-title" class="text-lg font-bold text-white">Términos y garantía</h3>
                         </div>
                         <div class="space-y-4 text-sm text-gray-300">
                             <p>
-                                <strong>1. Servicio de intermediación:</strong> MB Streaming actúa como un proveedor independiente de acceso a cuentas digitales. No estamos afiliados directamente con Netflix, Disney, HBO ni otras marcas mencionadas, las cuales son propiedad de sus respectivos dueños.
+                                <strong>1. Servicio de intermediación:</strong> MB Streaming actúa como proveedor independiente de acceso a cuentas digitales. No estamos afiliados a Netflix, Disney, HBO ni otras marcas mencionadas; son propiedad de sus respectivos dueños.
                             </p>
                             <p>
-                                <strong>2. Garantía de servicio:</strong> Todas nuestras cuentas (perfiles, cuentas completas y combos) cuentan con garantía de hasta 25 días. Si una cuenta presenta fallas, se dará solución o se reemplazará en un lapso no mayor a 48 horas.
+                                <strong>2. Garantía de servicio:</strong> Cuentas (perfiles, completas y combos) con garantía de hasta 25 días. Si presenta fallas, se brinda solución o reemplazo en un lapso no mayor a 48 horas.
                             </p>
-                            <p>
-                                <strong>3. Reglas de Uso:</strong> 
-                                <ul class="list-disc pl-5  space-y-1 text-gray-400">
+                            <div>
+                                <strong>3. Reglas de uso:</strong>
+                                <ul class="list-disc pl-5 space-y-1 text-gray-400 mt-2">
                                     <li>No cambiar correos ni contraseñas.</li>
                                     <li>Respetar el número de perfil asignado.</li>
-                                    <li>Al adquirir un perfil, solamente tiene derecho a usarlo en un solo dispositivo.</li>
+                                    <li>Al adquirir un perfil, solo se permite en un dispositivo.</li>
                                 </ul>
-                                <p class="font-bold"> <i class="fas fa-warning text-red-600 mr-1"></i> El incumplimiento de las reglas anula la garantía y lo hará acreedor de la pérdida de su cuenta y del dinero correspondiente.</p>
-                            </p>
+                                <p class="font-bold mt-3">
+                                    <i class="fas fa-warning text-red-400 mr-1" aria-hidden="true"></i>
+                                    El incumplimiento anula la garantía y puede causar pérdida de acceso y del monto correspondiente.
+                                </p>
+                            </div>
                         </div>
                         <div class="mt-6">
-                            <button type="button" onclick="toggleDisclaimer()" class="w-full rounded-xl btn-gradient px-4 py-3 text-sm font-semibold text-white shadow-sm hover:scale-105 transition-transform">
+                            <button type="button" onclick="toggleDisclaimer()"
+                                class="w-full rounded-xl btn-gradient px-4 py-3 text-sm font-semibold text-white shadow-sm hover:scale-105 transition-transform"
+                                aria-label="Aceptar y cerrar términos">
                                 Entendido
                             </button>
                         </div>
@@ -327,6 +423,7 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="js/products.js" defer></script>
+    <script src="js/app.js" defer></script>
 </body>
 </html>
