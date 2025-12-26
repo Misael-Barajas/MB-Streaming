@@ -89,7 +89,7 @@
             </p>
 
             <div class="max-w-3xl mx-auto mb-10">
-                <div class="trust-bar glass-card rounded-2xl p-4 sm:p-5 border border-white/10">
+                <div class="glass-card rounded-2xl p-4 sm:p-5 border border-white/10">
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
                         <div class="flex items-start gap-3">
                             <div class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
@@ -130,7 +130,7 @@
 
             <div id="countdownContainer" class="mb-12 fade-in">
                 <p class="text-sm uppercase tracking-widest text-yellow-400 font-bold mb-4 animate-pulse">
-                    <i class="fas fa-star mr-2" aria-hidden="true"></i> Ofertas y precios especiales terminan en:
+                    <i class="fas fa-star mr-2" aria-hidden="true"></i> Ofertas especiales terminan en:
                 </p>
                 <div id="countdownTimer" class="flex flex-wrap justify-center gap-3 sm:gap-6" aria-label="Temporizador de ofertas">
                     <div class="glass-card w-20 h-20 sm:w-24 sm:h-24 rounded-2xl flex flex-col items-center justify-center border border-yellow-500/30 shadow-[0_0_15px_rgba(234,179,8,0.1)]">
@@ -184,15 +184,116 @@
             <h3 class="text-xl text-gray-400">No encontramos lo que buscas</h3>
         </div>
     </main>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4"> 
+        </div>
+
+    <section id="faqSection" class="mt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-3 mb-10 px-2 fade-in">
+            <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                <i class="fas fa-question-circle text-xl text-blue-500" aria-hidden="true"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-white tracking-tight">Preguntas frecuentes</h2>
+            <div class="h-px flex-grow bg-gradient-to-r from-white/10 to-transparent ml-4"></div>
+        </div>
+        
+        <div class="space-y-4">
+            <div class="glass-card rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
+                <button onclick="toggleAccordion(this)" class="w-full p-5 text-left flex justify-between items-center group">
+                    <span class="font-semibold text-white transition-colors">¿Cómo recibo mi cuenta?</span>
+                    <i class="fas fa-chevron-down text-xs text-gray-500 text-white transition-all duration-300"></i>
+                </button>
+                <div class="accordion-content grid transition-all duration-300 ease-in-out" style="grid-template-rows: 0fr;">
+                    <div class="overflow-hidden">
+                        <p class="p-5 pt-0 text-sm text-gray-400 leading-relaxed">
+                            Una vez confirmado tu pago, te envío el acceso (correo y contraseña) directamente por WhatsApp junto con las indicaciones.
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="glass-card rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
+                <button onclick="toggleAccordion(this)" class="w-full p-5 text-left flex justify-between items-center group">
+                    <span class="font-semibold text-white transition-colors">¿Qué pasa si la cuenta falla?</span>
+                    <i class="fas fa-chevron-down text-xs text-gray-500 text-white transition-all duration-300"></i>
+                </button>
+                <div class="accordion-content grid transition-all duration-300 ease-in-out" style="grid-template-rows: 0fr;">
+                    <div class="overflow-hidden">
+                        <p class="p-5 pt-0 text-sm text-gray-400 leading-relaxed">
+                            Los servicios cuentan con garantía de reposición. Si tienes un problema, me escribes por WhatsApp y se le da solución en menos de 24-48 horas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="glass-card rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
+                <button onclick="toggleAccordion(this)" class="w-full p-5 text-left flex justify-between items-center group">
+                    <span class="font-semibold text-white transition-colors">¿Puedo cambiar la contraseña/correo?</span>
+                    <i class="fas fa-chevron-down text-xs text-gray-500 text-white transition-all duration-300"></i>
+                </button>
+                <div class="accordion-content grid transition-all duration-300 ease-in-out" style="grid-template-rows: 0fr;">
+                    <div class="overflow-hidden">
+                        <p class="p-5 pt-0 text-sm text-gray-400 leading-relaxed">
+                            No, queda estrictamente restringido cambiar los datos de la cuenta, ya que esto puede ocasionar la pérdida de acceso y anular la garantía.
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="glass-card rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
+                <button onclick="toggleAccordion(this)" class="w-full p-5 text-left flex justify-between items-center group">
+                    <span class="font-semibold text-white transition-colors">¿Puedo usar el perfil en varios dispositivos?</span>
+                    <i class="fas fa-chevron-down text-xs text-gray-500 text-white transition-all duration-300"></i>
+                </button>
+                <div class="accordion-content grid transition-all duration-300 ease-in-out" style="grid-template-rows: 0fr;">
+                    <div class="overflow-hidden">
+                        <p class="p-5 pt-0 text-sm text-gray-400 leading-relaxed">
+                            Los perfiles individuales son para un solo dispositivo, mientras que las cuentas completas permiten múltiples conexiones según la plataforma.
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="glass-card rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
+                <button onclick="toggleAccordion(this)" class="w-full p-5 text-left flex justify-between items-center group">
+                    <span class="font-semibold text-white transition-colors">¿Qué hago si me pide un código de verificación?</span>
+                    <i class="fas fa-chevron-down text-xs text-gray-500 text-white transition-all duration-300"></i>
+                </button>
+                <div class="accordion-content grid transition-all duration-300 ease-in-out" style="grid-template-rows: 0fr;">
+                    <div class="overflow-hidden">
+                        <p class="p-5 pt-0 text-sm text-gray-400 leading-relaxed">
+                            Algunos servicios pueden solicitar un código de verificación por seguridad. Contáctame por WhatsApp y te ayudaré a resolverlo rápidamente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="glass-card rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
+                <button onclick="toggleAccordion(this)" class="w-full p-5 text-left flex justify-between items-center group">
+                    <span class="font-semibold text-white transition-colors">¿Cómo soluciono "tu TV no forma parte del Hogar con Netflix de esta cuenta"?</span>
+                    <i class="fas fa-chevron-down text-xs text-gray-500 text-white transition-all duration-300"></i>
+                </button>
+                <div class="accordion-content grid transition-all duration-300 ease-in-out" style="grid-template-rows: 0fr;">
+                    <div class="overflow-hidden">
+                        <p class="p-5 pt-0 text-sm text-gray-400 leading-relaxed">
+                            Para resolver esta situación, por favor presiona el botón "Actualizar Hogar con Netflix" y, a continuación, selecciona "Enviar email". Una vez completados estos pasos, comunícate conmigo por WhatsApp indicando que necesitas actualizar el hogar con Netflix y que ya envíaste el correo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    </section>
 
     <footer class="border-t border-white/5 bg-slate-900/50 mt-12 mb-20 md:mb-0">
         <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-4">
                 <div class="flex items-center gap-2">
                     <img src="img/logo/mb-streaming-logo.webp" alt="MB Streaming" class="h-8 w-auto" loading="lazy" decoding="async">
-                    <span class="text-gray-500 text-sm">© 2025 MB Streaming</span>
+                    <span class="text-gray-500 text-sm">© 2026 MB Streaming</span>
                 </div>
-                <span class="text-sm text-gray-500">No afiliados a marcas registradas</span>
+                <span class="text-sm text-gray-600">No afiliados a marcas registradas</span>
 
                 <div class="flex items-center gap-4">
                     <button onclick="toggleDisclaimer()"
@@ -353,8 +454,6 @@
                 </div>
             </a>
 
-            <div class="h-px bg-white/10 my-4 mx-4"></div>
-
             <div class="relative" id="specialMenuBtn">
                 <a href="javascript:void(0)" onclick="filterProductsByMenu('special')" class="flex items-center gap-4 px-4 py-3 my-5 rounded-xl bg-gradient-to-r from-orange-900/20 to-red-900/20 border border-orange-500/20 hover:border-orange-500/50 transition-all group">
                     <div class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center shadow-lg shadow-orange-500/20" aria-hidden="true">
@@ -369,6 +468,18 @@
                     ¡Limitado!
                 </span>
             </div>
+
+            <div class="h-px bg-white/10 my-4 mx-4"></div>
+
+            <a href="javascript:void(0)" onclick="goToFaq()" class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-300 hover:bg-white/5 transition-all group">
+                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-blue-500/20">
+                    <i class="fas fa-question-circle text-blue-500"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-semibold">Preguntas frecuentes</span>
+                    <span class="text-xs text-gray-500">Dudas y soporte</span>
+                </div>
+            </a>
 
         </div>
 

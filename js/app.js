@@ -75,8 +75,8 @@
     const extraBadgesHTML = badges.length
       ? `<div class="absolute top-3 left-3 flex flex-col gap-2">
             ${badges.map(b => `
-              <span class="px-2 py-1 rounded-lg text-[10px] font-bold bg-black/35 border border-white/10 backdrop-blur-md text-white">
-                ${escapeHTML(b)}
+              <span class="px-2 py-1 rounded-lg text-sm font-bold bg-black/35 border border-white/10 backdrop-blur-md text-white flex items-center shadow-lg">
+                <i class="fas fa-fire text-sm mr-1" aria-hidden="true"></i>${escapeHTML(b)}
               </span>
             `).join("")}
          </div>`
@@ -585,25 +585,62 @@
 
   window.toggleDisclaimer = function () {
     const disc = document.getElementById("disclaimerModal");
-    disc.classList.contains("hidden") ? disc.classList.remove("hidden") : disc.classList.add("hidden");
+    const isHidden = disc.classList.contains("hidden");
+    
+    const url = new URL(window.location);
+  
+    if (isHidden) {
+        disc.classList.remove("hidden");
+        url.searchParams.set("view", "terms");
+    } else {
+        disc.classList.add("hidden");
+        url.searchParams.delete("view");
+    }
+    
+    window.history.pushState({}, "", url);
+  };
+
+  window.goToFaq = function() {
+    const overlay = document.getElementById("drawerOverlay");
+    if (overlay.classList.contains("overlay-visible")) toggleDrawer();
+  
+    const faqSection = document.querySelector('section.mt-24');
+    if (faqSection) {
+        faqSection.scrollIntoView({ behavior: "smooth" });
+        
+        const url = new URL(window.location);
+        url.searchParams.set("view", "faq");
+        window.history.pushState({}, "", url);
+    }
   };
 
   function checkUrlParams() {
     const urlParams = new URLSearchParams(window.location.search);
-
-    // Categoria: URL > localStorage > all
+  
     const categoryFromUrl = urlParams.get("category");
     const categoryFromLS = localStorage.getItem(LS_CATEGORY_KEY);
-
     const category = categoryFromUrl || categoryFromLS || "all";
     categoryFilter.value = category;
     filterProducts();
-
+  
     const productId = urlParams.get("id");
     if (productId) {
-      const idNum = parseInt(productId);
-      const productExists = window.products.some(p => p.id === idNum);
-      if (productExists) window.openModal(idNum);
+        const idNum = parseInt(productId);
+        if (window.products.some(p => p.id === idNum)) window.openModal(idNum);
+    }
+  
+    const view = urlParams.get("view");
+    if (view === "terms") {
+        const disc = document.getElementById("disclaimerModal");
+        disc.classList.remove("hidden");
+    } 
+    else if (view === "faq") {
+        const faqSection = document.getElementById('faqSection');
+        if (faqSection) {
+            setTimeout(() => {
+                faqSection.scrollIntoView({ behavior: "smooth" });
+            }, 500); // Un pequeño delay para que cargue el grid primero
+        }
     }
   }
 
@@ -640,6 +677,22 @@
       if (!discModal.classList.contains("hidden")) toggleDisclaimer();
     }
   });
+
+window.toggleAccordion = function(button) {
+    const content = button.nextElementSibling;
+    const icon = button.querySelector('i');
+    
+    // Validamos si ya está abierto o cerrado
+    const isOpen = content.style.gridTemplateRows === '1fr';
+
+    if (!isOpen) {
+        content.style.gridTemplateRows = '1fr';
+        icon.style.transform = 'rotate(180deg)';
+    } else {
+        content.style.gridTemplateRows = '0fr';
+        icon.style.transform = 'rotate(0deg)';
+    }
+};
 
   // Eventos
   searchInput.addEventListener("input", filterProducts);
