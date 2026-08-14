@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MB Streaming · Admin</title>
+  <link rel="icon" href="../img/favicon.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="min-h-screen text-white">
+  <div id="toast" class="toast hidden"></div>
+
+  <section id="loginView" class="min-h-screen flex items-center justify-center p-4">
+    <div class="panel w-full max-w-md p-8">
+      <div class="text-center mb-8">
+        <div class="logo-mark mx-auto mb-4"><i class="fas fa-lock"></i></div>
+        <h1 class="text-3xl font-bold">MB Streaming</h1>
+        <p class="text-slate-400 mt-2">Panel privado de administración</p>
+      </div>
+      <form id="loginForm" class="space-y-5">
+        <div>
+          <label class="label">Contraseña de administrador</label>
+          <div class="relative">
+            <i class="fas fa-key field-icon"></i>
+            <input id="adminPassword" type="password" autocomplete="current-password" class="input pl-11" placeholder="••••••••" required>
+          </div>
+        </div>
+        <button class="btn-primary w-full" type="submit"><i class="fas fa-right-to-bracket mr-2"></i>Entrar</button>
+        <p id="loginError" class="text-sm text-red-400 hidden"></p>
+      </form>
+      <a href="../" class="block text-center text-sm text-slate-500 hover:text-white mt-6">← Volver a la tienda</a>
+    </div>
+  </section>
+
+  <section id="adminView" class="hidden min-h-screen">
+    <header class="topbar">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="logo-mark small"><i class="fas fa-shield-halved"></i></div>
+          <div><h1 class="font-bold">Panel Admin</h1><p class="text-xs text-slate-500">MB Streaming</p></div>
+        </div>
+        <div class="flex gap-2">
+          <a href="../" class="btn-secondary"><i class="fas fa-store mr-2"></i>Tienda</a>
+          <button id="logoutBtn" class="btn-secondary"><i class="fas fa-arrow-right-from-bracket mr-2"></i>Salir</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="mb-8">
+        <p class="text-cyan-400 text-sm font-semibold uppercase tracking-widest">Administración</p>
+        <h2 class="text-3xl md:text-4xl font-bold mt-2">¿Qué quieres hacer?</h2>
+        <p class="text-slate-400 mt-2">Herramientas privadas para preparar tus entregas.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5 mb-8">
+        <button class="tool-card text-left" data-section="codesSection">
+          <div class="tool-icon cyan"><i class="fas fa-key"></i></div>
+          <h3>Obtener códigos</h3>
+          <p>Ejecuta tu integración con el proveedor y obtiene el enlace/código para actualizar el hogar.</p>
+          <span>Abrir herramienta <i class="fas fa-arrow-right ml-1"></i></span>
+        </button>
+        <button class="tool-card text-left" data-section="subscriptionSection">
+          <div class="tool-icon purple"><i class="fas fa-calendar-check"></i></div>
+          <h3>Suscripción</h3>
+          <p>Genera automáticamente la fecha de vencimiento y el mensaje listo para copiar y enviar.</p>
+          <span>Abrir generador <i class="fas fa-arrow-right ml-1"></i></span>
+        </button>
+      </div>
+
+      <section id="codesSection" class="panel p-6 mb-6 hidden">
+        <div class="section-title"><div class="tool-icon cyan"><i class="fas fa-key"></i></div><div><h3>Obtener códigos</h3><p>La consulta se ejecuta en una Netlify Function para no exponer tus credenciales.</p></div></div>
+        <div class="grid md:grid-cols-2 gap-5 mt-6">
+          <div>
+            <label class="label">Datos para tu proveedor</label>
+            <textarea id="codePayload" class="input min-h-40" placeholder='Ejemplo: {"email":"correo@gmail.com"}'></textarea>
+            <button id="getCodesBtn" class="btn-primary mt-4"><i class="fas fa-bolt mr-2"></i>Obtener códigos</button>
+          </div>
+          <div>
+            <label class="label">Respuesta del proveedor</label>
+            <textarea id="codeResult" class="input min-h-40 font-mono text-sm" readonly placeholder="Aquí aparecerá la respuesta..."></textarea>
+            <button id="copyCodeResult" class="btn-secondary mt-4"><i class="fas fa-copy mr-2"></i>Copiar respuesta</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="subscriptionSection" class="panel p-6 hidden">
+        <div class="section-title"><div class="tool-icon purple"><i class="fas fa-calendar-check"></i></div><div><h3>Generador de suscripciones</h3><p>30 días por defecto. El mensaje se arma sin líneas vacías innecesarias.</p></div></div>
+
+        <div class="grid lg:grid-cols-2 gap-8 mt-6">
+          <form id="subscriptionForm" class="space-y-5">
+            <div>
+              <label class="label">Nombre de la suscripción</label>
+              <input id="serviceName" class="input" placeholder="Ej. DISNEY+ PREMIUM" required>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div><label class="label">Correo</label><input id="email" type="email" class="input" placeholder="correo@gmail.com" required></div>
+              <div><label class="label">Contraseña</label><input id="password" class="input" placeholder="password123" required></div>
+            </div>
+
+            <div>
+              <label class="label">Fecha de inicio</label>
+              <input id="startDate" type="date" class="input" required>
+              <p class="hint">Se suman automáticamente 30 días.</p>
+            </div>
+
+            <div id="profileBlock">
+              <div class="flex items-center justify-between gap-3 mb-2">
+                <label class="label mb-0">Perfil</label>
+                <button type="button" id="createProfileBtn" class="quick-btn"><i class="fas fa-plus mr-1"></i>Crear perfil</button>
+              </div>
+              <div class="grid grid-cols-[1fr_auto] gap-3">
+                <input id="profile" class="input" placeholder="Nombre o número del perfil">
+                <button type="button" id="clearProfileBtn" class="btn-secondary" title="Quitar perfil"><i class="fas fa-xmark"></i></button>
+              </div>
+            </div>
+
+            <div id="pinBlock">
+              <label class="label">PIN <span class="text-slate-500 font-normal">(opcional)</span></label>
+              <input id="pin" inputmode="numeric" maxlength="6" pattern="[0-9]*" class="input" placeholder="1234">
+            </div>
+
+            <div id="netflixBlock" class="hidden rounded-2xl border border-red-500/20 bg-red-500/5 p-4">
+              <label class="label">Enlace para actualizar hogar (Netflix)</label>
+              <input id="homeLink" type="url" class="input" placeholder="https://...">
+              <p class="hint">Puedes pegar aquí el enlace obtenido desde “Obtener códigos”.</p>
+            </div>
+
+            <div class="flex items-center justify-between rounded-2xl bg-slate-950/60 border border-white/5 p-4">
+              <div><p class="font-semibold">Duración</p><p class="text-xs text-slate-500">Fija en 30 días</p></div>
+              <span class="badge">30 días</span>
+            </div>
+
+            <button class="btn-primary w-full" type="submit"><i class="fas fa-wand-magic-sparkles mr-2"></i>Generar mensaje</button>
+          </form>
+
+          <div>
+            <div class="flex items-center justify-between mb-2"><label class="label mb-0">Vista previa</label><span id="expirationBadge" class="badge">Vencimiento: —</span></div>
+            <textarea id="messageOutput" class="input output" readonly placeholder="Tu mensaje aparecerá aquí..."></textarea>
+            <button id="copyMessage" class="btn-secondary mt-4 w-full"><i class="fas fa-copy mr-2"></i>Copiar mensaje</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </section>
+
+  <script src="admin.js"></script>
+</body>
+</html>
