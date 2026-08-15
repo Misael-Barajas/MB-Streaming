@@ -114,33 +114,41 @@ function updateServiceUI() {
   $('pinBlock').classList.toggle('hidden', netflix);
 }
 
-serviceName.addEventListener('input', updateServiceUI);
+serviceName.addEventListener('input', () => {
+  const start = serviceName.selectionStart;
+  const end = serviceName.selectionEnd;
+  serviceName.value = serviceName.value.toUpperCase();
+  try { serviceName.setSelectionRange(start, end); } catch {}
+  updateServiceUI();
+  updatePreviewHeight();
+});
 
 $('createProfileBtn').addEventListener('click', () => {
+  profile.value = 'Crear perfil';
   profile.focus();
-  showToast('Escribe el nombre o número del perfil.');
+  profile.setSelectionRange(profile.value.length, profile.value.length);
+  showToast('Atajo agregado: Crear perfil.');
 });
 $('clearProfileBtn').addEventListener('click', () => { profile.value = ''; pin.value = ''; });
 
 function buildMessage() {
-  const name = serviceName.value.trim();
-  const start = new Date(startDate.value.split('-').map(Number).length ? startDate.value + 'T00:00:00' : '');
+  const name = serviceName.value.trim().toUpperCase();
+  const start = new Date(startDate.value + 'T00:00:00');
   const end = add30Days(startDate.value);
   const startFormatted = formatDate(start);
   const endFormatted = formatDate(end);
+  const terms = ['CONDICIONES DEL SERVICIO:', 'https://mb-streaming.netlify.app/?view=terms'].join('\n');
 
   if (isNetflix()) {
-    return [
+    const lines = [
       'NETFLIX',
       `✉ Correo: ${email.value.trim()}`,
       `🔐 Contraseña: ${password.value.trim()}`,
       `Fecha inicio: ${startFormatted}`,
       `Fecha vencimiento: ${endFormatted}`,
-      homeLink.value.trim() ? `OBTENER CÓDIGOS ACTUALIZAR HOGAR:\n${homeLink.value.trim()}` : '',
-      '',
-      'CONDICIONES DEL SERVICIO:',
-      'https://mb-streaming.netlify.app/?view=terms'
-    ].filter(Boolean).join('\n');
+      homeLink.value.trim() ? `OBTENER CÓDIGOS ACTUALIZAR HOGAR:\n${homeLink.value.trim()}` : ''
+    ].filter(Boolean);
+    return `${lines.join('\n')}\n\n${terms}`;
   }
 
   const lines = [
@@ -150,25 +158,38 @@ function buildMessage() {
     profile.value.trim() ? `👤 Perfil: ${profile.value.trim()}` : '',
     pin.value.trim() ? `🔢 PIN: ${pin.value.trim()}` : '',
     `Fecha inicio: ${startFormatted}`,
-    `Fecha vencimiento: ${endFormatted}`,
-    '',
-    'CONDICIONES DEL SERVICIO:',
-    'https://mb-streaming.netlify.app/?view=terms'
-  ];
-  return lines.filter(Boolean).join('\n');
+    `Fecha vencimiento: ${endFormatted}`
+  ].filter(Boolean);
+  return `${lines.join('\n')}\n\n${terms}`;
+}
+
+function updatePreviewHeight() {
+  const output = $('messageOutput');
+  if (!output) return;
+  output.style.height = 'auto';
+  const min = window.innerWidth <= 640 ? 180 : 260;
+  output.style.height = Math.max(min, output.scrollHeight) + 'px';
 }
 
 $('subscriptionForm').addEventListener('submit', (event) => {
   event.preventDefault();
   const end = add30Days(startDate.value);
   $('messageOutput').value = buildMessage();
+  updatePreviewHeight();
   $('expirationBadge').textContent = `Vencimiento: ${formatDate(end)}`;
   showToast('Mensaje generado.');
 });
 
+$('messageOutput').addEventListener('input', updatePreviewHeight);
+window.addEventListener('resize', updatePreviewHeight);
+
 startDate.addEventListener('change', () => {
   if (!startDate.value) return;
   $('expirationBadge').textContent = `Vencimiento: ${formatDate(add30Days(startDate.value))}`;
+  if ($('messageOutput').value) {
+    $('messageOutput').value = buildMessage();
+    updatePreviewHeight();
+  }
 });
 
 $('copyMessage').addEventListener('click', async () => {
@@ -180,5 +201,7 @@ $('copyMessage').addEventListener('click', async () => {
 // Fecha actual como valor inicial.
 const now = new Date();
 startDate.value = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+serviceName.value = serviceName.value.toUpperCase();
 updateServiceUI();
+updatePreviewHeight();
 checkSession();
