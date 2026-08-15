@@ -52,10 +52,34 @@ select.input {
 .input:-webkit-autofill:hover,
 .input:-webkit-autofill:focus,
 .input:-webkit-autofill:active {
-  -webkit-text-fill-color: #fff;
-  -webkit-box-shadow: 0 0 0 1000px rgba(2,6,23,.92) inset;
-  box-shadow: 0 0 0 1000px rgba(2,6,23,.92) inset;
+  -webkit-text-fill-color: #fff !important;
+  caret-color: #fff !important;
+  -webkit-box-shadow: 0 0 0 1000px rgba(2,6,23,.96) inset !important;
+  box-shadow: 0 0 0 1000px rgba(2,6,23,.96) inset !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
   transition: background-color 9999s ease-out 0s;
+}
+
+/* Keep browser/iOS autofilled values visually consistent with the dark inputs. */
+.input:-internal-autofill-selected {
+  color: #fff !important;
+  background-color: rgba(2,6,23,.96) !important;
+}
+
+.date-field {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.date-field .input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
 }
 
 #serviceName {
@@ -123,13 +147,32 @@ select.input {
     padding: 12px;
   }
 
+  .date-field {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
   input[type="date"] {
     display: block;
-    width: 100%;
-    min-width: 0;
-    max-width: 100%;
-    padding-right: 8px;
-    font-size: 15px;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    inline-size: 100% !important;
+    box-sizing: border-box;
+    padding-right: 42px;
+    font-size: 16px;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 12px;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    opacity: .75;
   }
 
   .grid.grid-cols-\[1fr_auto\] {
@@ -160,5 +203,6 @@ select.input {
 
 @media (max-width: 640px) {
   input[type="date"]::-webkit-date-and-time-value { text-align: left; }
-  input[type="date"]::-webkit-calendar-picker-indicator { margin-left: 0; }
+  input[type="date"]::-webkit-datetime-edit { min-width: 0; }
+  input[type="date"]::-webkit-datetime-edit-fields-wrapper { min-width: 0; }
 }
