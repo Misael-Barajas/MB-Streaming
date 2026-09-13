@@ -107,11 +107,10 @@ window.products = [
       features: ["Sin anuncios", "Calidad 4K", "Compatible con combo", "Garantía y soporte"],
       image: LOGOS.mubi, color: COLORS.mubi },
 
-    { id: 106, name: "HBO Max", category: "streaming", price: "Desde $90 hasta $120 MXN",
+    { id: 106, name: "HBO Max", category: "streaming", price: "$85 MXN",
       description: "HBO, Warner Bros. y DC. Series top y estrenos con gran calidad de imagen.",
       features: ["Sin anuncios", "Máxima calidad (4K UHD)", "Descarga de títulos", "Compatible con combo", "Garantía y soporte"],
-      image: LOGOS.max, color: COLORS.max,
-      variants: [{ label: "Estándar", price: "$90 MXN" }, { label: "Platino", price: "$120 MXN" }] },
+      image: LOGOS.max, color: COLORS.max },
 
     { id: 107, name: "Disney+ Premium", category: "streaming", price: "$95 MXN",
       description: "Disney, Pixar, Marvel, Star Wars y National Geographic. Para toda la familia.",
@@ -187,11 +186,10 @@ window.products = [
       features: ["Cuenta completa privada", "Plan Mega Fan", "Sin anuncios"],
       image: LOGOS.crunchy, color: COLORS.crunchy },
 
-    { id: 403, name: "HBO Max (Completa)", category: "full", price: "Desde $200 hasta $270 MXN",
+    { id: 403, name: "HBO Max (Completa)", category: "full", price: "$220 MXN",
       description: "Cuenta privada con varios perfiles y gran catálogo HBO/Warner.",
       features: ["Cuenta completa privada", "5 Perfiles disponibles", "Calidad 4K UHD"],
-      image: LOGOS.max, color: COLORS.max,
-      variants: [{ label: "Estándar", price: "$200 MXN" }, { label: "Platino", price: "$270 MXN" }] },
+      image: LOGOS.max, color: COLORS.max },
 
     { id: 404, name: "Netflix (Completa)", category: "full", price: "$250 MXN",
       description: "Cuenta privada con acceso completo a perfiles y beneficios.",
@@ -204,7 +202,7 @@ window.products = [
       image: LOGOS.disney, color: COLORS.disney, logoClass: "h-24 w-auto"},
 
     // COMBOS DÚO
-    { id: 501, name: "Combos con Netflix", category: "duo", price: "Desde $150 hasta $215 MXN",
+    { id: 501, name: "Combos con Netflix", category: "duo", price: "Desde $150 hasta $190 MXN",
       description: "Combina Netflix con otro servicio y ahorra $10 MXN en total. Ideal para armar tu pack.",
       features: ["Ahorro de $10 MXN", "2 Perfiles individuales", "Mejor precio garantizado"],
       image: LOGOS.netflix, color: COLORS.netflix,
@@ -213,26 +211,20 @@ window.products = [
         { label: "con VIX", price: "$150 MXN" },
         { label: "con Paramount+", price: "$150 MXN" },
         { label: "con Prime Video", price: "$155 MXN" },
-        { label: "con HBO Estándar", price: "$175 MXN" },
+        { label: "con HBO", price: "$170 MXN" },
         { label: "con Disney+ Premium", price: "$190 MXN" },
-        { label: "con HBO Platino", price: "$205 MXN" },
       ]},
 
-    { id: 510, name: "Combos con HBO Max", category: "duo", price: "Desde $150 hasta $220 MXN",
+    { id: 510, name: "Combos con HBO Max", category: "duo", price: "Desde $140 hasta $170 MXN",
       description: "HBO Max + otro servicio con descuento total de $10 MXN. Tú eliges la combinación.",
       features: ["Ahorro de $10 MXN", "2 Perfiles individuales", "Mejor precio garantizado"],
       image: LOGOS.max, color: COLORS.max,
       variants: [
-        { label: "Estándar + Crunchyroll", price: "$145 MXN" },
-        { label: "Estándar + VIX", price: "$145 MXN" },
-        { label: "Estándar + Paramount+", price: "$145 MXN" },
-        { label: "Estándar + Prime Video", price: "$150 MXN" },
-        { label: "Estándar + Disney+", price: "$175 MXN" },
-        { label: "Platino + Crunchyroll", price: "$175 MXN" },
-        { label: "Platino + VIX", price: "$175 MXN" },
-        { label: "Platino + Paramount+", price: "$175 MXN" },
-        { label: "Platino + Prime Video", price: "$180 MXN" },
-        { label: "Platino + Disney+", price: "$205 MXN" }
+        { label: "con Crunchyroll", price: "$140 MXN" },
+        { label: "con VIX", price: "$140 MXN" },
+        { label: "con Paramount+", price: "$140 MXN" },
+        { label: "con Prime Video", price: "$155 MXN" },
+        { label: "con Disney+", price: "$170 MXN" },
       ]},
 
     { id: 520, name: "Combos con Disney+", category: "duo", price: "Desde $150 hasta $170 MXN",
